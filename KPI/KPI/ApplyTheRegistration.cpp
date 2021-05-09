@@ -13,11 +13,6 @@ void ApplyTheRegistration::profileManager()
 {
 	FileWriter::writeProfileData(profileData);
 	FileWriter::writeLoginData(profileData);
-	string path = "Database/Applications/" + to_string(profileData.getID());
-	if (fs::exists(path) == false)
-	{
-		fs::create_directory(path);
-	}
 }
 
 void ApplyTheRegistration::profileDataCheck()

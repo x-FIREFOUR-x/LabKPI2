@@ -7,10 +7,11 @@
 #include "FileWriter.h"
 #include <filesystem>
 #include <ctime>
-#include <iostream>
 #include <string>
+
 using namespace std;
 namespace fs = filesystem;
+
 void SiteInterface::createDefaultFiles()
 {
 	srand(time(NULL));
