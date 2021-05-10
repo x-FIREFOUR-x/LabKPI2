@@ -133,19 +133,23 @@ void ViewInteraction::showTheory()
 		cout << str[i];
 	}
 	cout << endl;
-	cout << "(0)Next page\n";
-	cout << "(1)Previous page\n";
+	cout << "(0)Previous page\n";
+	cout << "(1)Next page\n";
 	cout << "(2)Close\n";
 	//cout << "(2)Close\n";
 	int operation;
 	cin >> operation;
 	if (operation == 0)
 	{
-		showTheory(n + 1);
+		showTheory(n - 1);
 	}
 	if (operation == 1)
 	{
-		showTheory(n - 1);
+		showTheory(n + 1);
+	}
+	if (operation == 2)
+	{
+		clearScreen();
 	}
 }
 
@@ -160,17 +164,21 @@ void ViewInteraction::showTheory(int n)
 		cout << str[i];
 	}
 	cout << endl;
-	cout << "(0)Next page\n";
-	cout << "(1)Previous page\n";
+	cout << "(0)Previous page\n";
+	cout << "(1)Next page\n";
 	cout << "(2)Close\n";
 	int operation;
 	cin >> operation;
 	if (operation == 0)
 	{
-		showTheory(n + 1);
+		showTheory(n - 1);
 	}
 	if (operation == 1)
 	{
-		showTheory(n - 1);
+		showTheory(n + 1);
+	}
+	if (operation == 2)
+	{
+		clearScreen();
 	}
 }
