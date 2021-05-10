@@ -15,5 +15,6 @@ public:
 	static void inputValue(std::string str, std::string& value);
 	static bool checkIfYouWannaRewrite(std::string word);
 	static void confirmation(std::string& confirmation);
+	static void getTypeOfTest(int& choice);
 };
 

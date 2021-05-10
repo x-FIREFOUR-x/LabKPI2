@@ -117,3 +117,9 @@ void ViewInteraction::confirmation(string& confirmation) {
 	cout << "Are you sure?\n(0)Confirm\n(Any key)No\n";
 	cin >> confirmation;
 }
+
+void ViewInteraction::getTypeOfTest(int& choice)
+{
+	cout<<"(0)Right triangle\n(1)Three sides\n(2)Two sides and an angle\n(3)The side and two angles\n(4)Leave tests:"<<endl;
+	cin>>choice;
+}

@@ -5,6 +5,7 @@
 #include "FileReader.h"
 #include "Profile.h"
 #include "FileWriter.h"
+#include "WorkWithTests.h"
 #include <filesystem>
 #include <ctime>
 #include <string>
@@ -61,6 +62,21 @@ void SiteInterface::showMenu()
 				}
 				else if (action == 1)
 				{
+					int testChoice;
+					ViewInteraction::getTypeOfTest(testChoice);
+					WorkWithTests tests;
+					if(testChoice==0)
+					{
+						tests.testsWithRightTriangle();
+					}
+					else if(testChoice==1)
+					{
+						
+					}
+					else if(testChoice==2)
+					{
+						
+					}
 
 				}
 				else if (action == 2)

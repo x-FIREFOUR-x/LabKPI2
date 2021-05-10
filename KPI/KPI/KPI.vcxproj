@@ -150,6 +150,7 @@
     <ClCompile Include="Validation.cpp" />
     <ClCompile Include="ViewInteraction.cpp" />
     <ClCompile Include="ViewMessages.cpp" />
+    <ClCompile Include="WorkWithTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AccountManagement.h" />
@@ -161,6 +162,7 @@
     <ClInclude Include="Validation.h" />
     <ClInclude Include="ViewInteraction.h" />
     <ClInclude Include="ViewMessages.h" />
+    <ClInclude Include="WorkWithTests.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,5 +1,4 @@
 #include "ViewMessages.h"
-#include "ViewMessages.h"
 #include <iostream>
 
 using namespace std;
