@@ -116,6 +116,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,7 +140,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="KPI.cpp" />
+    <ClCompile Include="AccountManagement.cpp" />
+    <ClCompile Include="ApplyTheRegistration.cpp" />
+    <ClCompile Include="FileReader.cpp" />
+    <ClCompile Include="FileWriter.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Profile.cpp" />
+    <ClCompile Include="SiteInterface.cpp" />
+    <ClCompile Include="Validation.cpp" />
+    <ClCompile Include="ViewInteraction.cpp" />
+    <ClCompile Include="ViewMessages.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AccountManagement.h" />
+    <ClInclude Include="ApplyTheRegistration.h" />
+    <ClInclude Include="FileReader.h" />
+    <ClInclude Include="FileWriter.h" />
+    <ClInclude Include="Profile.h" />
+    <ClInclude Include="SiteInterface.h" />
+    <ClInclude Include="Validation.h" />
+    <ClInclude Include="ViewInteraction.h" />
+    <ClInclude Include="ViewMessages.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
