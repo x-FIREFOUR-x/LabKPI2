@@ -2,6 +2,7 @@
 #include <iostream>
 #include "ViewInteraction.h"
 #include "Validation.h"
+
 using namespace std;
 
 void ViewInteraction::startPick(int& choice) {
@@ -116,4 +117,60 @@ bool ViewInteraction::checkIfYouWannaRewrite(string word) {
 void ViewInteraction::confirmation(string& confirmation) {
 	cout << "Are you sure?\n(0)Confirm\n(Any key)No\n";
 	cin >> confirmation;
+}
+
+void ViewInteraction::showTheory()
+{
+	clearScreen();
+	cout << "Choose a section: ";
+	int n;
+	cin >> n;
+	vector<string> str;
+	clearScreen();
+	str = Theory::getInfo(n);
+	for (int i = 0; i < str.size(); i++)
+	{
+		cout << str[i];
+	}
+	cout << endl;
+	cout << "(0)Next page\n";
+	cout << "(1)Previous page\n";
+	cout << "(2)Close\n";
+	//cout << "(2)Close\n";
+	int operation;
+	cin >> operation;
+	if (operation == 0)
+	{
+		showTheory(n + 1);
+	}
+	if (operation == 1)
+	{
+		showTheory(n - 1);
+	}
+}
+
+void ViewInteraction::showTheory(int n)
+{
+	clearScreen();
+	vector<string> str;
+	clearScreen();
+	str = Theory::getInfo(n);
+	for (int i = 0; i < str.size(); i++)
+	{
+		cout << str[i];
+	}
+	cout << endl;
+	cout << "(0)Next page\n";
+	cout << "(1)Previous page\n";
+	cout << "(2)Close\n";
+	int operation;
+	cin >> operation;
+	if (operation == 0)
+	{
+		showTheory(n + 1);
+	}
+	if (operation == 1)
+	{
+		showTheory(n - 1);
+	}
 }

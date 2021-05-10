@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "Profile.h"
+#include "Theory.h"
 
 class ViewInteraction
 {
@@ -15,5 +16,7 @@ public:
 	static void inputValue(std::string str, std::string& value);
 	static bool checkIfYouWannaRewrite(std::string word);
 	static void confirmation(std::string& confirmation);
+	static void showTheory();
+	static void showTheory(int n);
 };
 

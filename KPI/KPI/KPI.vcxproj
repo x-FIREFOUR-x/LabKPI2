@@ -147,6 +147,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Profile.cpp" />
     <ClCompile Include="SiteInterface.cpp" />
+    <ClCompile Include="Theory.cpp" />
     <ClCompile Include="Validation.cpp" />
     <ClCompile Include="ViewInteraction.cpp" />
     <ClCompile Include="ViewMessages.cpp" />
@@ -158,6 +159,7 @@
     <ClInclude Include="FileWriter.h" />
     <ClInclude Include="Profile.h" />
     <ClInclude Include="SiteInterface.h" />
+    <ClInclude Include="Theory.h" />
     <ClInclude Include="Validation.h" />
     <ClInclude Include="ViewInteraction.h" />
     <ClInclude Include="ViewMessages.h" />
