@@ -1,18 +1,20 @@
 #include "FileReader.h"
 #include "ViewMessages.h"
 #include "Profile.h"
+using namespace std;
+
 Profile FileReader::readProfile(int ID)
 {
 	ifstream fileProfile("Database/Profiles/" + to_string(ID) + ".txt");
 	string name, email;
-	int type;
-	fileProfile >> name >> email >> type;
+	fileProfile >> name >> email;
 	Profile currentProfile;
 	currentProfile.setEmail(email);
 	currentProfile.setName(name);
 	currentProfile.setID(ID);
 	return currentProfile;
 }
+
 int FileReader::readID(string login, string password)
 {
 	int ID = -1;
@@ -36,6 +38,7 @@ int FileReader::readID(string login, string password)
 	inFile.close();
 	return ID;
 }
+
 void FileReader::readLoginAndPassword(int ID, string& login, string& password)
 {
 	ifstream inFile("Database/Accounts.txt");
@@ -58,6 +61,7 @@ void FileReader::readLoginAndPassword(int ID, string& login, string& password)
 	}
 	inFile.close();
 }
+
 bool FileReader::readCheckID(int ID)
 {
 	bool correct = true;
@@ -83,6 +87,7 @@ bool FileReader::readCheckID(int ID)
 	inFile.close();
 	return correct;
 }
+
 bool FileReader::readCheckLogin(string login)
 {
 	bool correct = true;

@@ -8,7 +8,6 @@
 #include "FileReader.h"
 #include "FileWriter.h"
 #include "Validation.h"
-
 using namespace std;
 namespace fs = filesystem;
 
@@ -23,13 +22,13 @@ void AccountManagement::exitFromProfile(int ID)
 	ViewMessages::successfulLogOut();
 }
 
-void AccountManagement::deleteProfile(int ID, int type)
+void AccountManagement::deleteProfile(int ID)
 {
 	fs::remove("Database/Profiles/" + to_string(ID) + ".txt");
 	FileWriter::rewriteAccounts(ID);
 }
 
-void AccountManagement::registerProfile(int type)
+void AccountManagement::registerProfile()
 {
 	int profileID = rand() % 90000 + 10000;
 	while (!Validation::IDCheck(profileID))
@@ -37,7 +36,7 @@ void AccountManagement::registerProfile(int type)
 		profileID = rand() % 90000 + 10000;
 	}
 	ApplyTheRegistration registrationController;
-	Profile newProfile = ViewInteraction::createProfi(profileID, type);
+	Profile newProfile = ViewInteraction::createProfile(profileID);
 	registrationController.setProfile(newProfile);
 	registrationController.profileDataCheck();
 }

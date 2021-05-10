@@ -2,7 +2,7 @@
 
 using namespace std;
 
-Profile::Profile(string name, string email, string login, string password, int ID, int type, float balance) :
+Profile::Profile(string name, string email, string login, string password, int ID) :
 	name(name), email(email), profileID(ID), login(login), password(password)
 {}
 

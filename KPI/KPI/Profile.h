@@ -5,7 +5,7 @@ class Profile
 {
 public:
 	Profile() {}
-	Profile(std::string, std::string, std::string, std::string, int, int, float);
+	Profile(std::string, std::string, std::string, std::string, int);
 	std::string getName()const;
 	std::string getEmail()const;
 	std::string getPassword()const;

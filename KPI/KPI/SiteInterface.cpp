@@ -37,35 +37,65 @@ void SiteInterface::showMenu()
 		ViewInteraction::clearScreen();
 		switch (choice)
 		{
-		case 0: {
+		case 0:
+		{
 			string login, password;
 			ViewInteraction::logIn(login, password);
 			ViewInteraction::clearScreen();
+			int ID = AccountManagement::enterToProfile(login, password);
+			if (ID == -1) {
+				ViewMessages::unsuccsessfulLogIn();
+				continue;
+			}
+			ViewMessages::succsessfulLogIn();
+			Profile current = FileReader::readProfile(ID);
+			int action;
+			bool profileIsDeleted = false;
+			do
 			{
-				int ID = AccountManagement::enterToProfile(login, password);
-				if (ID == -1) {
-					ViewMessages::unsuccsessfulLogIn();
-					continue;
+				ViewInteraction::profilePick(action);
+				ViewInteraction::clearScreen();
+				if (action == 0)
+				{
+
 				}
-				ViewMessages::succsessfulLogIn();
-				Profile current = FileReader::readProfile(ID);
-					int action;
-					bool profileIsDeleted = false;
-					do
+				else if (action == 1)
+				{
+
+				}
+				else if (action == 2)
+				{
+
+				}
+				else if (action == 3)
+				{
+					AccountManagement::editProfile(ID);
+				}
+				else if (action == 4)
+				{
+					string confirmation;
+					ViewInteraction::confirmation(confirmation);
+					if (confirmation == "0")
 					{
-						ViewInteraction::profilePick(action);
-						ViewInteraction::clearScreen();
-					} while (action != 3);
-					if (!profileIsDeleted)
-					{
-						ViewInteraction::clearScreen();
-						AccountManagement::exitFromProfile(ID);
+						AccountManagement::deleteProfile(ID);
+						action = 5;
+						profileIsDeleted = true;
 					}
+					else
+					{
+						ViewInteraction::clearScreen();
+					}
+				}
+			} while (action != 5);
+			if (!profileIsDeleted)
+			{
+				ViewInteraction::clearScreen();
+				AccountManagement::exitFromProfile(ID);
 			}
 		}
 			  break;
 		case 1:
-			AccountManagement::registerProfile(0);
+			AccountManagement::registerProfile();
 			break;
 		}
 	} while (choice != 2);

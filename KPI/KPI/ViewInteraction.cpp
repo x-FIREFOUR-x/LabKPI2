@@ -1,8 +1,9 @@
-#include "ViewInteraction.h"
-#include "Validation.h"
 #include <string>
 #include <iostream>
+#include "ViewInteraction.h"
+#include "Validation.h"
 using namespace std;
+
 void ViewInteraction::startPick(int& choice) {
 	string choice1;
 	do
@@ -20,25 +21,28 @@ void ViewInteraction::clearScreen()
 {
 	system("cls");
 }
+
 void ViewInteraction::logIn(string& login, string& password) {
 	cout << "Enter your login:\n";
 	cin >> login;
 	cout << "Enter your password:\n";
 	cin >> password;
 }
+
 void ViewInteraction::profilePick(int& action) {
 	string action1;
 	do
 	{
-		cout << "(0)Check theory\n(1)Do tests\n(2)Check your score\n(3)Log out:" << endl;
+		cout << "(0)Check theory\n(1)Do tests\n(2)Check your score\n(3)Edit your profile\n(4)Delete your profile\n(5)Log out:" << endl;
 		if (cin.peek() == '\n') {
 			cin.ignore();
 		}
 		getline(cin, action1);
-	} while (!Validation::PickCheck(action1, 3));
+	} while (!Validation::PickCheck(action1, 5));
 	action = stoi(action1);
 }
-Profile ViewInteraction::createProfi(int profileID, int type)
+
+Profile ViewInteraction::createProfile(int profileID)
 {
 	string login, password, name, email;
 	cout << "Enter your login:\n";
@@ -49,9 +53,10 @@ Profile ViewInteraction::createProfi(int profileID, int type)
 	cin >> name;
 	cout << "Enter your email:\n";
 	cin >> email;
-	Profile newProfile(name, email, login, password, profileID, type, 0);
+	Profile newProfile(name, email, login, password, profileID);
 	return newProfile;
 }
+
 int ViewInteraction::inputEditing()
 {
 	clearScreen();
@@ -69,6 +74,7 @@ int ViewInteraction::inputEditing()
 	typeOfEditing = stoi(typeOfEditing1);
 	return typeOfEditing;
 }
+
 bool ViewInteraction::checkIfYouWannaEdit()
 {
 	string leave1;
@@ -85,11 +91,13 @@ bool ViewInteraction::checkIfYouWannaEdit()
 	leave = stoi(leave1);
 	return leave;
 }
+
 void ViewInteraction::inputValue(string str, string& value)
 {
 	cout << endl << str << endl;
 	cin >> value;
 }
+
 bool ViewInteraction::checkIfYouWannaRewrite(string word) {
 	bool leave;
 	string leave1;
@@ -103,4 +111,9 @@ bool ViewInteraction::checkIfYouWannaRewrite(string word) {
 	} while (!Validation::PickCheck(leave1, 1));
 	leave = stoi(leave1);
 	return leave;
+}
+
+void ViewInteraction::confirmation(string& confirmation) {
+	cout << "Are you sure?\n(0)Confirm\n(Any key)No\n";
+	cin >> confirmation;
 }

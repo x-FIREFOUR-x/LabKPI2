@@ -1,10 +1,9 @@
+#include <fstream>
+#include <filesystem>
 #include "FileWriter.h"
 #include "Profile.h"
 #include "ViewInteraction.h"
 #include "ViewMessages.h"
-#include <fstream>
-#include <filesystem>
-
 using namespace std;
 namespace fs = filesystem;
 
@@ -46,8 +45,6 @@ void FileWriter::writeProfileData(Profile profileData)
 	outProfile.close();
 
 }
-
-
 
 void FileWriter::writeLoginData(Profile profileData)
 {
@@ -121,9 +118,8 @@ void FileWriter::editFileName(string OldPath, string NewPath, string newName)
 	if ((oldProfile.is_open()) && (newProfile.is_open()))
 	{
 		string name, email;
-		int type;
-		oldProfile >> name >> email >> type;
-		newProfile << newName << " " << email << " " << type << endl;
+		oldProfile >> name >> email;
+		newProfile << newName << " " << email << endl;
 		oldProfile.close();
 		newProfile.close();
 		fs::remove(OldPath);
@@ -140,9 +136,8 @@ void FileWriter::editFileEmail(string OldPath, string NewPath, string newEmail)
 	if ((oldProfile.is_open()) && (newProfile.is_open()))
 	{
 		string name, email;
-		int type;
-		oldProfile >> name >> email >> type;
-		newProfile << name << " " << newEmail << " " << type << endl;
+		oldProfile >> name >> email;
+		newProfile << name << " " << newEmail << endl;
 		oldProfile.close();
 		newProfile.close();
 		fs::remove(OldPath);

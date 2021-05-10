@@ -1,5 +1,6 @@
 #pragma once
 #include "Profile.h"
+
 class FileWriter
 {
 public:

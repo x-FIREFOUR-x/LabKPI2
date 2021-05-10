@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+
 class AccountManagement
 {
 	static void editLogin(int ID);
@@ -10,8 +11,8 @@ class AccountManagement
 public:
 	static int enterToProfile(std::string login, std::string password);
 	static void exitFromProfile(int ID);
-	static void deleteProfile(int ID, int type);
-	static void registerProfile(int);
+	static void deleteProfile(int ID);
+	static void registerProfile();
 	static void editProfile(int ID);
 };
 

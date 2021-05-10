@@ -1,11 +1,10 @@
+#include <filesystem>
 #include "ApplyTheRegistration.h"
 #include "AccountManagement.h"
 #include "Validation.h"
 #include "ViewInteraction.h"
 #include "ViewMessages.h"
 #include "FileWriter.h"
-#include <filesystem>
-
 using namespace std;
 namespace fs = std::filesystem;
 
@@ -46,7 +45,7 @@ void ApplyTheRegistration::profileDataCheck()
 		if (!leave)
 		{
 			ViewInteraction::clearScreen();
-			AccountManagement::registerProfile(0);
+			AccountManagement::registerProfile();
 		}
 		else
 		{
