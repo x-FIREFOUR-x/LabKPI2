@@ -1,4 +1,5 @@
 #include "ViewMessages.h"
+#include <string>
 #include <iostream>
 
 using namespace std;
@@ -49,4 +50,9 @@ void ViewMessages::LoginTaken()
 void ViewMessages::verificationConfirmed()
 {
 	cout << "Verification confirmed!" << endl;
+}
+
+void ViewMessages::ConditionOut(std::string condition)
+{
+	cout << condition << endl;
 }

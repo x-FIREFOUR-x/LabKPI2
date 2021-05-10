@@ -3,6 +3,7 @@
 
 int main()
 {
+	srand(time(NULL));
 	SiteInterface::createDefaultFiles();
 	SiteInterface::showMenu();
 }
