@@ -32,16 +32,28 @@ vector<float> Exercise::right_triangle_second()
 
 vector<float> Exercise::right_triangle_third()
 {
-	const float M_PI = 3.14159265358979323846;
 	firstParameter = rand() % 30; //Катет АВ  b
 	secondParameter = rand() % 70 + 10; //прилеглий гострий кут А  альфа
 	thirdParameter = 90; //Прямий кут В
-	float angleInDegrees=(static_cast<float>(secondParameter))*M_PI/180;
-	
-	ViewMessages::ConditionOut("Знайти невідомі сторони й гострі кути прямокутного трикутника за катетом AB=" +
-		to_string(firstParameter) + " і гострим кутом А=" + to_string(secondParameter) + '.');
-	results.push_back((static_cast<float>(firstParameter))/cos(angleInDegrees)); // гіпотенуза АС   с
-	results.push_back(static_cast<float>(firstParameter)*tan(angleInDegrees)); // Катет ВС   a
-	results.push_back(90-results[1]); // гострий кут С    Бета
+	float angleInDegrees=(static_cast<float>(secondParameter)) * M_PI / 180;
+	ViewMessages::ConditionOut("Заданий прямокутний трикутник ABC. Знайти невідомі сторони й гострі кути трикутника за катетом AB = " +
+		to_string(firstParameter) + "см і гострим кутом А = " + to_string(secondParameter) + '.');
+	results.push_back(round((static_cast<float>(firstParameter))/cos(angleInDegrees) * 10)/10.0); // гіпотенуза АС   с
+	results.push_back(round(static_cast<float>(firstParameter)*tan(angleInDegrees) * 10) / 10.0); // Катет ВС   a
+	results.push_back(90 - secondParameter); // гострий кут С    Бета
+	return results;
+}
+
+vector<float> Exercise::right_triangle_fifth()
+{
+	firstParameter = rand() % 20 + 10; //Гіпотенуза AB
+	secondParameter = rand() % 70 + 10; //Прилеглий гострий кут А
+	thirdParameter = 90; //Прямий кут С
+	float angleInDegrees = (static_cast<float>(secondParameter)) * M_PI / 180;
+	ViewMessages::ConditionOut("Заданий прямокутник трикутник ABC. Знайти катети та невідомий гострий кут трикутника за гіпотенузою AB = " +
+		to_string(firstParameter) + "см і прилеглим до нього гострим кутом А = " + to_string(secondParameter) + '.');
+	results.push_back(round((float)firstParameter * cos(angleInDegrees) * 10) / 10.0); //Катет АС
+	results.push_back(round((float)firstParameter * sin(angleInDegrees) * 10) / 10.0); //Катет ВС
+	results.push_back(90 - secondParameter); //Гострий кут В
 	return results;
 }

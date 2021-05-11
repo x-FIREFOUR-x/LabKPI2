@@ -14,5 +14,6 @@ public:
 	std::vector<float> right_triangle_first();
 	std::vector<float> right_triangle_second();
 	std::vector<float> right_triangle_third();
+	std::vector<float> right_triangle_fifth();
 };
 
