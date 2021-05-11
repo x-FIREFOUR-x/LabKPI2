@@ -72,6 +72,10 @@ void SiteInterface::showMenu()
 					{
 
 						tests.rightTriangleFirst();
+						tests.rightTriangleSecond();
+						tests.rightTriangleThird();
+						tests.rightTriangleFourth();
+						tests.rightTriangleFifth();
 					}
 					else if(testChoice==1)
 					{
