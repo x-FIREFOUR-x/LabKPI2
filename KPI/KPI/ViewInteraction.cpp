@@ -123,7 +123,9 @@ void ViewInteraction::confirmation(string& confirmation) {
 void ViewInteraction::showTheory()
 {
 	clearScreen();
+	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
+	
 	//cout << "дороророр" << endl;
 	vector<string> str;
 	str = Theory::getInfo(0);
@@ -150,7 +152,8 @@ void ViewInteraction::showTheory()
 	cout << "(2)Close\n";
 	int operation;
 	cin >> operation;
-	SetConsoleOutputCP(866);
+	
+	
 	if (operation == 0)
 	{
 		showTheory(n - 1);
@@ -163,6 +166,9 @@ void ViewInteraction::showTheory()
 	{
 		clearScreen();
 	}
+	
+	SetConsoleOutputCP(866);
+	SetConsoleCP(866);
 }
 
 void ViewInteraction::showTheory(int n)
