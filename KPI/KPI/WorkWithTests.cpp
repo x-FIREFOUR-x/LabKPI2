@@ -1,5 +1,5 @@
 #include "WorkWithTests.h"
-#include "Exercise.h"
+#include "ExerciseRightTriangle.h"
 #include <iostream>
 #include <locale>
 
@@ -10,8 +10,8 @@ void WorkWithTests::testsWithRightTriangle()
 	setlocale(LC_ALL, "RU");
 	for(int i=0;i<5;i++)
 	{
-		Exercise task;
-		vector <float> results = task.right_triangle_first();
+		ExerciseRightTriangle task;
+		vector <float> results = task.first();
 		//cout << endl << results[0];
 		//cout << endl << results[1];
 		//cout << endl << results[2];

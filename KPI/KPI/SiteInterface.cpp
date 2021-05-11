@@ -6,7 +6,7 @@
 #include "Profile.h"
 #include "FileWriter.h"
 #include "WorkWithTests.h"
-#include "Exercise.h"
+#include "ExerciseRightTriangle.h"
 #include <filesystem>
 #include <ctime>
 #include <string>

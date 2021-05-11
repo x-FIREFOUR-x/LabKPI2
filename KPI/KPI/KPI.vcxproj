@@ -143,6 +143,8 @@
     <ClCompile Include="AccountManagement.cpp" />
     <ClCompile Include="ApplyTheRegistration.cpp" />
     <ClCompile Include="Exercise.cpp" />
+    <ClCompile Include="ExerciseArbitraryTriangle.cpp" />
+    <ClCompile Include="ExerciseRightTriangle.cpp" />
     <ClCompile Include="FileReader.cpp" />
     <ClCompile Include="FileWriter.cpp" />
     <ClCompile Include="main.cpp" />
@@ -157,6 +159,8 @@
     <ClInclude Include="AccountManagement.h" />
     <ClInclude Include="ApplyTheRegistration.h" />
     <ClInclude Include="Exercise.h" />
+    <ClInclude Include="ExerciseArbitraryTriangle.h" />
+    <ClInclude Include="ExerciseRightTriangle.h" />
     <ClInclude Include="FileReader.h" />
     <ClInclude Include="FileWriter.h" />
     <ClInclude Include="Profile.h" />
