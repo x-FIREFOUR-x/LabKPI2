@@ -1,13 +1,11 @@
 #include "WorkWithTests.h"
 #include "ExerciseRightTriangle.h"
 #include <iostream>
-#include <locale>
 
 using namespace std;
 
 void WorkWithTests::rightTriangleFirst()
 {
-	setlocale(LC_ALL, "RU");
 	ExerciseRightTriangle task;
 	vector <float> results = task.first();
 	cout<<"Enter angle A:\n";

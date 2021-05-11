@@ -2,7 +2,7 @@
 #include <vector>
 #include "Exercise.h"
 
-class ExerciseRightTriangle:public Exercise
+class ExerciseRightTriangle :public Exercise
 {
 public:
 	std::vector<float> first();
@@ -11,4 +11,5 @@ public:
 	std::vector<float> fourth();
 	std::vector<float> fifth();
 };
+
 
