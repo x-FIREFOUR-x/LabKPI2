@@ -17,7 +17,7 @@ vector<float> Exercise::right_triangle_first()
 	return results;
 }
 
-vector<float> Excercice::right_triangle_second()
+vector<float> Exercise::right_triangle_second()
 {
 	firstParameter = rand() % 20 + 5; //Перший катет AC
 	secondParameter = rand() % 20 + 5; //Другий катет BC
