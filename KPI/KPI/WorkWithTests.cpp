@@ -7,7 +7,7 @@ using namespace std;
 
 void WorkWithTests::testsWithRightTriangle()
 {
-	setlocale(LC_ALL, "RU");
+	//setlocale(LC_ALL, "RU");
 	for(int i=0;i<5;i++)
 	{
 		ExerciseRightTriangle task;

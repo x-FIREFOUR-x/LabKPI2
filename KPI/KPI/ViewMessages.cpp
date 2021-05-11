@@ -1,6 +1,8 @@
 #include "ViewMessages.h"
 #include <string>
 #include <iostream>
+#include <Windows.h>
+#include <locale>
 
 using namespace std;
 
@@ -54,5 +56,11 @@ void ViewMessages::verificationConfirmed()
 
 void ViewMessages::ConditionOut(std::string condition)
 {
+    SetConsoleOutputCP(1251);
+	SetConsoleCP(1251);
+	//setlocale(0, "ukrainian");
 	cout << condition << endl;
+	//setlocale(LC_ALL, "english");
+    //SetConsoleOutputCP(866);
+	//SetConsoleCP(866);
 }
