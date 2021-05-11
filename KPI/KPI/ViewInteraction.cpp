@@ -1,5 +1,6 @@
 #include <string>
 #include <iostream>
+#include <windows.h>
 #include "ViewInteraction.h"
 #include "Validation.h"
 
@@ -122,10 +123,19 @@ void ViewInteraction::confirmation(string& confirmation) {
 void ViewInteraction::showTheory()
 {
 	clearScreen();
+	SetConsoleOutputCP(1251);
+	//cout << "дороророр" << endl;
+	vector<string> str;
+	str = Theory::getInfo(0);
+	for (int i = 0; i < str.size(); i++)
+	{
+		cout << str[i];
+	}
+	cout << endl;
 	cout << "Choose a section: ";
 	int n;
 	cin >> n;
-	vector<string> str;
+	str.clear();
 	clearScreen();
 	str = Theory::getInfo(n);
 	for (int i = 0; i < str.size(); i++)
@@ -133,12 +143,14 @@ void ViewInteraction::showTheory()
 		cout << str[i];
 	}
 	cout << endl;
-	cout << "(0)Previous page\n";
-	cout << "(1)Next page\n";
+	if (n > 1)
+		cout << "(0)Previous page\n";
+	if (n < 11)
+		cout << "(1)Next page\n";
 	cout << "(2)Close\n";
-	//cout << "(2)Close\n";
 	int operation;
 	cin >> operation;
+	SetConsoleOutputCP(866);
 	if (operation == 0)
 	{
 		showTheory(n - 1);
@@ -156,19 +168,22 @@ void ViewInteraction::showTheory()
 void ViewInteraction::showTheory(int n)
 {
 	clearScreen();
+	SetConsoleOutputCP(1251);
 	vector<string> str;
-	clearScreen();
 	str = Theory::getInfo(n);
 	for (int i = 0; i < str.size(); i++)
 	{
 		cout << str[i];
 	}
 	cout << endl;
-	cout << "(0)Previous page\n";
-	cout << "(1)Next page\n";
+	if (n > 1)
+		cout << "(0)Previous page\n";
+	if (n < 11)
+		cout << "(1)Next page\n";
 	cout << "(2)Close\n";
 	int operation;
 	cin >> operation;
+	SetConsoleOutputCP(866);
 	if (operation == 0)
 	{
 		showTheory(n - 1);
