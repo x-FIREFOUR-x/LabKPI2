@@ -134,41 +134,44 @@ void ViewInteraction::showTheory()
 		cout << str[i];
 	}
 	cout << endl;
-	cout << "Choose a section: ";
+	cout << "Choose a section(or press 0 to leave): ";
 	int n;
 	cin >> n;
-	str.clear();
-	clearScreen();
-	str = Theory::getInfo(n);
-	for (int i = 0; i < str.size(); i++)
+	if (n != 0)
 	{
-		cout << str[i];
-	}
-	cout << endl;
-	if (n > 1)
-		cout << "(0)Previous page\n";
-	if (n < 11)
-		cout << "(1)Next page\n";
-	cout << "(2)Close\n";
-	int operation;
-	cin >> operation;
-	
-	
-	if ((operation == 0) && (n > 1))
-	{
-		showTheory(n - 1);
-	}
-	if ((operation == 1) && (n < 11))
-	{
-		showTheory(n + 1);
-	}
-	if (operation == 2)
-	{
+		str.clear();
 		clearScreen();
+		str = Theory::getInfo(n);
+		for (int i = 0; i < str.size(); i++)
+		{
+			cout << str[i];
+		}
+		cout << endl;
+		if (n > 1)
+			cout << "(0)Previous page\n";
+		if (n < 11)
+			cout << "(1)Next page\n";
+		cout << "(2)Close\n";
+		int operation;
+		cin >> operation;
+
+
+		if ((operation == 0) && (n > 1))
+		{
+			showTheory(n - 1);
+		}
+		if ((operation == 1) && (n < 11))
+		{
+			showTheory(n + 1);
+		}
+		if (operation == 2)
+		{
+			showTheory();
+		}
+
+		SetConsoleOutputCP(866);
+		SetConsoleCP(866);
 	}
-	
-	SetConsoleOutputCP(866);
-	SetConsoleCP(866);
 	clearScreen();
 }
 
@@ -201,7 +204,8 @@ void ViewInteraction::showTheory(int n)
 	}
 	if (operation == 2)
 	{
-		clearScreen();
+		showTheory();
 	}
+	SetConsoleOutputCP(866);
 	clearScreen();
 }
