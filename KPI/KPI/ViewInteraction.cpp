@@ -1,7 +1,9 @@
 #include <string>
 #include <iostream>
+#include <windows.h>
 #include "ViewInteraction.h"
 #include "Validation.h"
+
 using namespace std;
 
 void ViewInteraction::startPick(int& choice) {
@@ -116,4 +118,94 @@ bool ViewInteraction::checkIfYouWannaRewrite(string word) {
 void ViewInteraction::confirmation(string& confirmation) {
 	cout << "Are you sure?\n(0)Confirm\n(Any key)No\n";
 	cin >> confirmation;
+}
+
+void ViewInteraction::showTheory()
+{
+	clearScreen();
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	
+	//cout << "дороророр" << endl;
+	vector<string> str;
+	str = Theory::getInfo(0);
+	for (int i = 0; i < str.size(); i++)
+	{
+		cout << str[i];
+	}
+	cout << endl;
+	cout << "Choose a section(or press 0 to leave): ";
+	int n;
+	cin >> n;
+	if (n != 0)
+	{
+		str.clear();
+		clearScreen();
+		str = Theory::getInfo(n);
+		for (int i = 0; i < str.size(); i++)
+		{
+			cout << str[i];
+		}
+		cout << endl;
+		if (n > 1)
+			cout << "(0)Previous page\n";
+		if (n < 11)
+			cout << "(1)Next page\n";
+		cout << "(2)Close\n";
+		int operation;
+		cin >> operation;
+
+
+		if ((operation == 0) && (n > 1))
+		{
+			showTheory(n - 1);
+		}
+		if ((operation == 1) && (n < 11))
+		{
+			showTheory(n + 1);
+		}
+		if (operation == 2)
+		{
+			showTheory();
+		}
+
+		SetConsoleOutputCP(866);
+		SetConsoleCP(866);
+	}
+	clearScreen();
+}
+
+void ViewInteraction::showTheory(int n)
+{
+	clearScreen();
+	SetConsoleOutputCP(1251);
+	vector<string> str;
+	str = Theory::getInfo(n);
+	for (int i = 0; i < str.size(); i++)
+	{
+		cout << str[i];
+	}
+	cout << endl;
+	if (n > 1)
+		cout << "(0)Previous page\n";
+	if (n < 11)
+		cout << "(1)Next page\n";
+	cout << "(2)Close\n";
+	int operation;
+	cin >> operation;
+	SetConsoleOutputCP(866);
+	if ((operation == 0) && (n > 1))
+	{
+		showTheory(n - 1);
+	}
+	if ((operation == 1) && (n < 11))
+	{
+		showTheory(n + 1);
+	}
+	if (operation == 2)
+	{
+		showTheory();
+	}
+	SetConsoleOutputCP(866);
+	clearScreen();
 }

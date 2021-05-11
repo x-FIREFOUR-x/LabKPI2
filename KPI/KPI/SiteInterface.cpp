@@ -57,7 +57,7 @@ void SiteInterface::showMenu()
 				ViewInteraction::clearScreen();
 				if (action == 0)
 				{
-
+					ViewInteraction::showTheory();
 				}
 				else if (action == 1)
 				{

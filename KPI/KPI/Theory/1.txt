@@ -1,0 +1,20 @@
+Тема 1. Головні теореми:
+
+	 C
+        / \
+       /   \
+      /     \
+     /       \ 
+   A/_________\ B
+
+Теорема косинусів:
+   CB^2 = AC^2 + AB^2 - 2*AC*AB*cos(CAB)
+   AC^2 = CB^2 + AB^2 - 2*CB*AB*cos(CBA)
+   AB^2 = AC^2 + CB^2 - 2*AC*CB*cos(ACB)
+
+Теорема синусів:
+   CB / sin(CAB) =  AC / sin(CBA) = AB / sin(ACB)
+
+Сума кутів трикутника:
+   CAB + CBA + ACB = 180
+
