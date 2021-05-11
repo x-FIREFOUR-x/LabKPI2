@@ -126,7 +126,7 @@ void ViewInteraction::showTheory()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	
-	//cout << "дороророр" << endl;
+	//cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ" << endl;
 	vector<string> str;
 	str = Theory::getInfo(0);
 	for (int i = 0; i < str.size(); i++)
@@ -208,4 +208,10 @@ void ViewInteraction::showTheory(int n)
 	}
 	SetConsoleOutputCP(866);
 	clearScreen();
+}
+
+void ViewInteraction::getTypeOfTest(int& choice)
+{
+	cout<<"(0)Right triangle\n(1)Three sides\n(2)Two sides and an angle\n(3)The side and two angles\n(4)Leave tests:"<<endl;
+	cin>>choice;
 }

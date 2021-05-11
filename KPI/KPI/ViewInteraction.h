@@ -1,5 +1,7 @@
 #pragma once
 #include <string>
+#include <vector>
+
 #include "Profile.h"
 #include "Theory.h"
 
@@ -18,5 +20,7 @@ public:
 	static void confirmation(std::string& confirmation);
 	static void showTheory();
 	static void showTheory(int n);
+	static void getTypeOfTest(int& choice);
+	//static void readTestAnswers(std::vector<std::string>);
 };
 

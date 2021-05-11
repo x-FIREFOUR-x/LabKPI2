@@ -143,6 +143,9 @@
   <ItemGroup>
     <ClCompile Include="AccountManagement.cpp" />
     <ClCompile Include="ApplyTheRegistration.cpp" />
+    <ClCompile Include="ExerciseRightTriangle.cpp" />
+    <ClCompile Include="Exercise.cpp" />
+    <ClCompile Include="ExerciseArbitraryTriangle.cpp" />
     <ClCompile Include="FileReader.cpp" />
     <ClCompile Include="FileWriter.cpp" />
     <ClCompile Include="main.cpp" />
@@ -152,10 +155,14 @@
     <ClCompile Include="Validation.cpp" />
     <ClCompile Include="ViewInteraction.cpp" />
     <ClCompile Include="ViewMessages.cpp" />
+    <ClCompile Include="WorkWithTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AccountManagement.h" />
     <ClInclude Include="ApplyTheRegistration.h" />
+    <ClInclude Include="ExerciseRightTriangle.h" />
+    <ClInclude Include="Exercise.h" />
+    <ClInclude Include="ExerciseArbitraryTriangle.h" />
     <ClInclude Include="FileReader.h" />
     <ClInclude Include="FileWriter.h" />
     <ClInclude Include="Profile.h" />
@@ -164,6 +171,7 @@
     <ClInclude Include="Validation.h" />
     <ClInclude Include="ViewInteraction.h" />
     <ClInclude Include="ViewMessages.h" />
+    <ClInclude Include="WorkWithTests.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

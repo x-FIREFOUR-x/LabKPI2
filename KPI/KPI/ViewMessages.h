@@ -1,4 +1,6 @@
 #pragma once
+#include <string>
+
 class ViewMessages
 {
 public:
@@ -12,5 +14,6 @@ public:
 	static void succsessfulLogIn();
 	static void LoginTaken();
 	static void verificationConfirmed();
+	static void ConditionOut(std::string);
 };
 

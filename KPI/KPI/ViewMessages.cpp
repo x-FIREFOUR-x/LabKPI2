@@ -1,6 +1,7 @@
 #include "ViewMessages.h"
-#include "ViewMessages.h"
+#include <string>
 #include <iostream>
+#include<windows.h>
 
 using namespace std;
 
@@ -50,4 +51,11 @@ void ViewMessages::LoginTaken()
 void ViewMessages::verificationConfirmed()
 {
 	cout << "Verification confirmed!" << endl;
+}
+
+void ViewMessages::ConditionOut(std::string condition)
+{
+	SetConsoleOutputCP(1251);
+	cout << condition << endl;
+	SetConsoleOutputCP(866);
 }

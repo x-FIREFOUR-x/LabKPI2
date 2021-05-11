@@ -5,9 +5,13 @@
 #include "FileReader.h"
 #include "Profile.h"
 #include "FileWriter.h"
+#include "WorkWithTests.h"
+#include "ExerciseRightTriangle.h"
 #include <filesystem>
 #include <ctime>
 #include <string>
+#include <vector>
+#include <iostream>
 
 using namespace std;
 namespace fs = filesystem;
@@ -61,6 +65,26 @@ void SiteInterface::showMenu()
 				}
 				else if (action == 1)
 				{
+					int testChoice;
+					ViewInteraction::getTypeOfTest(testChoice);
+					WorkWithTests tests;
+					if(testChoice==0)
+					{
+
+						tests.rightTriangleFirst();
+						tests.rightTriangleSecond();
+						tests.rightTriangleThird();
+						tests.rightTriangleFourth();
+						tests.rightTriangleFifth();
+					}
+					else if(testChoice==1)
+					{
+						
+					}
+					else if(testChoice==2)
+					{
+						
+					}
 
 				}
 				else if (action == 2)
