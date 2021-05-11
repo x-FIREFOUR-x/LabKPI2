@@ -48,7 +48,7 @@
     <ClCompile Include="WorkWithTests.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Excercice.cpp">
+    <ClCompile Include="Exercise.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -83,7 +83,7 @@
     <ClInclude Include="WorkWithTests.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Excercice.h">
+    <ClInclude Include="Exercise.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

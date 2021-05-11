@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 
-class Excercice
+class Exercise
 {
 protected:
 	int firstParameter;

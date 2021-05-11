@@ -1,12 +1,10 @@
-#include "Excercice.h"
+#include "Exercise.h"
 #include "ViewMessages.h"
-#include "ViewMessages.h"
-#include <ctime>
 #include <iostream>
 #include <math.h>
 using namespace std;
 
-vector<float> Excercice::right_triangle_first()
+vector<float> Exercise::right_triangle_first()
 {
 	firstParameter = rand() % 20 + 10; //Гіпотенуза AB
 	secondParameter = rand() % (firstParameter - 9) + 5; //Катет BC
