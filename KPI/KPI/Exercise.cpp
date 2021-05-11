@@ -32,7 +32,6 @@ vector<float> Exercise::right_triangle_second()
 
 vector<float> Exercise::right_triangle_third()
 {
-	const float M_PI = 3.14159265358979323846;
 	firstParameter = rand() % 30; //Катет АВ  b
 	secondParameter = rand() % 70 + 10; //прилеглий гострий кут А  альфа
 	thirdParameter = 90; //Прямий кут В
@@ -42,6 +41,22 @@ vector<float> Exercise::right_triangle_third()
 		to_string(firstParameter) + " і гострим кутом А=" + to_string(secondParameter) + '.');
 	results.push_back((static_cast<float>(firstParameter))/cos(angleInDegrees)); // гіпотенуза АС   с
 	results.push_back(static_cast<float>(firstParameter)*tan(angleInDegrees)); // Катет ВС   a
-	results.push_back(90-results[1]); // гострий кут С    Бета
+	results.push_back(90-angleInDegrees); // гострий кут С    Бета
+	return results;
+}
+
+vector<float> Exercise::right_triangle_fourth()
+{
+	firstParameter = rand() % 30; //Катет АВ  b
+	secondParameter = rand() % 70 + 10; //протилежний гострий кут C  бета
+	thirdParameter = 90; //Прямий кут В
+	float angleInDegrees=(static_cast<float>(secondParameter))*M_PI/180;
+	
+	ViewMessages::ConditionOut("Знайти невідомі сторони й гострі кути прямокутного трикутника за катетом AB=" +
+		to_string(firstParameter) + " і гострим кутом С=" + to_string(secondParameter) + '.');
+	results.push_back((static_cast<float>(firstParameter))/sin(angleInDegrees)); // гіпотенуза АС   с
+	results.push_back(90-angleInDegrees); // гострий кут А
+	angleInDegrees=(results[1])*M_PI/180;
+	results.push_back(static_cast<float>(firstParameter)*tan(angleInDegrees)); // Катет ВС   a
 	return results;
 }
