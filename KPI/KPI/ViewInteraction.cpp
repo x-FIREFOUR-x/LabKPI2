@@ -154,11 +154,11 @@ void ViewInteraction::showTheory()
 	cin >> operation;
 	
 	
-	if (operation == 0)
+	if ((operation == 0) && (n > 1))
 	{
 		showTheory(n - 1);
 	}
-	if (operation == 1)
+	if ((operation == 1) && (n < 11))
 	{
 		showTheory(n + 1);
 	}
@@ -169,6 +169,7 @@ void ViewInteraction::showTheory()
 	
 	SetConsoleOutputCP(866);
 	SetConsoleCP(866);
+	clearScreen();
 }
 
 void ViewInteraction::showTheory(int n)
@@ -190,11 +191,11 @@ void ViewInteraction::showTheory(int n)
 	int operation;
 	cin >> operation;
 	SetConsoleOutputCP(866);
-	if (operation == 0)
+	if ((operation == 0) && (n > 1))
 	{
 		showTheory(n - 1);
 	}
-	if (operation == 1)
+	if ((operation == 1) && (n < 11))
 	{
 		showTheory(n + 1);
 	}
@@ -202,4 +203,5 @@ void ViewInteraction::showTheory(int n)
 	{
 		clearScreen();
 	}
+	clearScreen();
 }
