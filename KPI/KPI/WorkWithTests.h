@@ -2,6 +2,7 @@
 class WorkWithTests
 {
 public:
-	void testsWithRightTriangle();
+	void rightTriangleFirst();
+	void rightTriangleSecond();
 };
 

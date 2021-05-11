@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <ctime>
 #include  "SiteInterface.h"
 
 int main()
