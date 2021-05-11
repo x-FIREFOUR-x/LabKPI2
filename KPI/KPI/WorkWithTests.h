@@ -7,5 +7,8 @@ public:
 	void rightTriangleThird();
 	void rightTriangleFourth();
 	void rightTriangleFifth();
+	void arbitraryTriangleFirst();
+	void arbitraryTriangleSecond();
+	void arbitraryTriangleThird();
 };
 

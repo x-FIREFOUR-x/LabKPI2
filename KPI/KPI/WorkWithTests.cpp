@@ -112,3 +112,67 @@ void WorkWithTests::rightTriangleFifth()
 		cout << "Cathet AC: " << results[0] << endl << "Cathet BC: " << results[1] << endl << "Angle B: " << results[2] << endl;
 	}
 }
+
+void WorkWithTests::arbitraryTriangleFirst()
+{
+	ExerciseRightTriangle task;
+	vector <float> results = task.second();
+	cout << "Enter angle A:\n";
+	float angleC, angleA, angleB;
+	cin >> angleA;
+	cout << "Enter angle B:\n";
+	cin >> angleB;
+	cout << "Enter angle C:\n";
+	cin >> angleC;
+	if ((static_cast<int>(angleB * 10) == static_cast<int>(results[0] * 10)) && (static_cast<int>(angleC * 10) == static_cast<int>(results[1] * 10)) && (static_cast<int>(angleA * 10) == static_cast<int>(results[2] * 10)))
+	{
+		cout << "Your answers are correct!\n";
+	}
+	else
+	{
+		cout << "You are wrong!\n";
+		cout << "Angle B: " << results[0] << endl << "Angle C: " << results[1] << endl << "Angle A: " << results[2] << endl;
+	}
+}
+void WorkWithTests::arbitraryTriangleSecond()
+{
+	ExerciseRightTriangle task;
+	vector <float> results = task.second();
+	cout << "Enter angle A:\n";
+	float angleC, angleA, cathetAC;
+	cin >> angleA;
+	cout << "Enter angle C:\n";
+	cin >> angleC;
+	cout << "Enter cathet AC:\n";
+	cin >> cathetAC;
+	if ((static_cast<int>(cathetAC * 10) == static_cast<int>(results[0] * 10)) && (static_cast<int>(angleC * 10) == static_cast<int>(results[1] * 10)) && (static_cast<int>(angleA * 10) == static_cast<int>(results[2] * 10)))
+	{
+		cout << "Your answers are correct!\n";
+	}
+	else
+	{
+		cout << "You are wrong!\n";
+		cout << "Cathet AC: " << results[0] << endl << "Angle C: " << results[1] << endl << "Angle A: " << results[2] << endl;
+	}
+}
+void WorkWithTests::arbitraryTriangleThird()
+{
+	ExerciseRightTriangle task;
+	vector <float> results = task.second();
+	cout << "Enter angle C:\n";
+	float angleC, cathetAC, cathetBC;
+	cin >> angleC;
+	cout << "Enter cathet AC:\n";
+	cin >> cathetAC;
+	cout << "Enter cathet BC:\n";
+	cin >> cathetBC;
+	if ((static_cast<int>(angleC * 10) == static_cast<int>(results[0] * 10)) && (static_cast<int>(cathetAC * 10) == static_cast<int>(results[1] * 10)) && (static_cast<int>(cathetBC * 10) == static_cast<int>(results[2] * 10)))
+	{
+		cout << "Your answers are correct!\n";
+	}
+	else
+	{
+		cout << "You are wrong!\n";
+		cout << "Angle C: " << results[0] << endl << "Cathet AC: " << results[1] << endl << "Cathet BC: " << results[2] << endl;
+	}
+}
