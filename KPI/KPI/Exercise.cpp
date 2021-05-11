@@ -6,57 +6,70 @@ using namespace std;
 
 vector<float> Exercise::right_triangle_first()
 {
-	firstParameter = rand() % 20 + 10; //Гіпотенуза AB
-	secondParameter = rand() % (firstParameter - 9) + 5; //Катет BC
-	thirdParameter = 90; //Прямий кут C
-	ViewMessages::ConditionOut("Заданий прямокутний трикутник ABC. Знайти невідомі сторони й гострі кути трикутника за гіпотенузою AB = " +
-		to_string(firstParameter) + "см і катетом BC=" + to_string(secondParameter) + "cм.");
-	results.push_back(round(asin((((float)secondParameter)/firstParameter)) * 1800.0 / M_PI) / 10.0); //Кут A
-	results.push_back(90 - results[0]); //Кут B
-	results.push_back(round(sqrt(pow(firstParameter, 2) - pow(secondParameter, 2)) * 10) / 10.0); //Сторона АС
+	firstParameter = rand() % 20 + 10; //ГіпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ AB
+	secondParameter = rand() % (firstParameter - 9) + 5; //пїЅпїЅпїЅпїЅпїЅ BC
+	thirdParameter = 90; //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ C
+	ViewMessages::ConditionOut("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ABC. пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ AB = " +
+		to_string(firstParameter) + "пїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ BC=" + to_string(secondParameter) + "cпїЅ.");
+	results.push_back(round(asin((((float)secondParameter)/firstParameter)) * 1800.0 / M_PI) / 10.0); //пїЅпїЅпїЅ A
+	results.push_back(90 - results[0]); //пїЅпїЅпїЅ B
+	results.push_back(round(sqrt(pow(firstParameter, 2) - pow(secondParameter, 2)) * 10) / 10.0); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ
 	return results;
 }
 
 vector<float> Exercise::right_triangle_second()
 {
-	firstParameter = rand() % 20 + 5; //Перший катет AC
-	secondParameter = rand() % 20 + 5; //Другий катет BC
-	thirdParameter = 90; //Прямий кут C
-	ViewMessages::ConditionOut("Заданий прямокутний трикутник ABC. Знайти гіпотенузу та гострі кути трикутника за катетом AC = " +
-		to_string(firstParameter) + "см і катетом BC = " + to_string(secondParameter) + "см.");
-	results.push_back(round(sqrt(pow(firstParameter, 2) + pow(secondParameter, 2)) * 10) / 10.0); //Гіпотенуза AB
-	results.push_back(round(asin((((float)secondParameter)/results[0])) * 1800.0 / M_PI) / 10.0); //Кут А
-	results.push_back(90 - results[1]); //Кут B
+	firstParameter = rand() % 20 + 5; //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ AC
+	secondParameter = rand() % 20 + 5; //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ BC
+	thirdParameter = 90; //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ C
+	ViewMessages::ConditionOut("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ABC. пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ AC = " +
+		to_string(firstParameter) + "пїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ BC = " + to_string(secondParameter) + "пїЅпїЅ.");
+	results.push_back(round(sqrt(pow(firstParameter, 2) + pow(secondParameter, 2)) * 10) / 10.0); //ГіпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ AB
+	results.push_back(round(asin((((float)secondParameter)/results[0])) * 1800.0 / M_PI) / 10.0); //пїЅпїЅпїЅ пїЅ
+	results.push_back(90 - results[1]); //пїЅпїЅпїЅ B
 	return results;
 }
 
 vector<float> Exercise::right_triangle_third()
 {
-	firstParameter = rand() % 30; //Катет АВ  b
-	secondParameter = rand() % 70 + 10; //прилеглий гострий кут А  альфа
-	thirdParameter = 90; //Прямий кут В
-	float angleInDegrees=(static_cast<float>(secondParameter))*M_PI/180;
-	
-	ViewMessages::ConditionOut("Знайти невідомі сторони й гострі кути прямокутного трикутника за катетом AB=" +
-		to_string(firstParameter) + " і гострим кутом А=" + to_string(secondParameter) + '.');
-	results.push_back((static_cast<float>(firstParameter))/cos(angleInDegrees)); // гіпотенуза АС   с
-	results.push_back(static_cast<float>(firstParameter)*tan(angleInDegrees)); // Катет ВС   a
-	results.push_back(90-angleInDegrees); // гострий кут С    Бета
+	firstParameter = rand() % 30; //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ  b
+	secondParameter = rand() % 70 + 10; //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅ  пїЅпїЅпїЅпїЅпїЅ
+	thirdParameter = 90; //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅ
+	float angleInDegrees=(static_cast<float>(secondParameter)) * M_PI / 180;
+	ViewMessages::ConditionOut("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ABC. пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ AB = " +
+		to_string(firstParameter) + "пїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ = " + to_string(secondParameter) + '.');
+	results.push_back(round((static_cast<float>(firstParameter))/cos(angleInDegrees) * 10)/10.0); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ   пїЅ
+	results.push_back(round(static_cast<float>(firstParameter)*tan(angleInDegrees) * 10) / 10.0); // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ   a
+	results.push_back(90-angleInDegrees); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅ    пїЅпїЅпїЅпїЅ
 	return results;
 }
 
 vector<float> Exercise::right_triangle_fourth()
 {
-	firstParameter = rand() % 30; //Катет АВ  b
-	secondParameter = rand() % 70 + 10; //протилежний гострий кут C  бета
-	thirdParameter = 90; //Прямий кут В
+	firstParameter = rand() % 30; //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ  b
+	secondParameter = rand() % 70 + 10; //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ C  пїЅпїЅпїЅпїЅ
+	thirdParameter = 90; //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅ
 	float angleInDegrees=(static_cast<float>(secondParameter))*M_PI/180;
 	
-	ViewMessages::ConditionOut("Знайти невідомі сторони й гострі кути прямокутного трикутника за катетом AB=" +
-		to_string(firstParameter) + " і гострим кутом С=" + to_string(secondParameter) + '.');
-	results.push_back((static_cast<float>(firstParameter))/sin(angleInDegrees)); // гіпотенуза АС   с
-	results.push_back(90-angleInDegrees); // гострий кут А
+	ViewMessages::ConditionOut("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ AB=" +
+		to_string(firstParameter) + " пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ=" + to_string(secondParameter) + '.');
+	results.push_back((static_cast<float>(firstParameter))/sin(angleInDegrees)); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ   пїЅ
+	results.push_back(90-angleInDegrees); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅ
 	angleInDegrees=(results[1])*M_PI/180;
-	results.push_back(static_cast<float>(firstParameter)*tan(angleInDegrees)); // Катет ВС   a
+	results.push_back(static_cast<float>(firstParameter)*tan(angleInDegrees)); // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ   a
+	return results;
+}
+
+vector<float> Exercise::right_triangle_fifth()
+{
+	firstParameter = rand() % 20 + 10; //ГіпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ AB
+	secondParameter = rand() % 70 + 10; //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅ
+	thirdParameter = 90; //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅ
+	float angleInDegrees = (static_cast<float>(secondParameter)) * M_PI / 180;
+	ViewMessages::ConditionOut("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ABC. пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ AB = " +
+		to_string(firstParameter) + "пїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ = " + to_string(secondParameter) + '.');
+	results.push_back(round((float)firstParameter * cos(angleInDegrees) * 10) / 10.0); //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ
+	results.push_back(round((float)firstParameter * sin(angleInDegrees) * 10) / 10.0); //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ
+	results.push_back(90 - secondParameter); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅ
 	return results;
 }
