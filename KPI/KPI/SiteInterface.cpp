@@ -71,7 +71,7 @@ void SiteInterface::showMenu()
 					if(testChoice==0)
 					{
 
-						tests.testsWithRightTriangle();
+						tests.rightTriangleFirst();
 					}
 					else if(testChoice==1)
 					{
