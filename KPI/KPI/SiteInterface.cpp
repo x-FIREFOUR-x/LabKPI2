@@ -6,7 +6,7 @@
 #include "Profile.h"
 #include "FileWriter.h"
 #include "WorkWithTests.h"
-#include "Excercice.h"
+#include "Exercise.h"
 #include <filesystem>
 #include <ctime>
 #include <string>
@@ -70,12 +70,8 @@ void SiteInterface::showMenu()
 					WorkWithTests tests;
 					if(testChoice==0)
 					{
-						//tests.testsWithRightTriangle();
-						Excercice zadan;
-						vector <float> results = zadan.right_triangle_first();
-						cout << endl << results[0];
-						cout << endl << results[1];
-						cout << endl << results[2];
+
+						tests.testsWithRightTriangle();
 					}
 					else if(testChoice==1)
 					{

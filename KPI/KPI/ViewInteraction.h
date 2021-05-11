@@ -1,5 +1,7 @@
 #pragma once
 #include <string>
+#include <vector>
+
 #include "Profile.h"
 
 class ViewInteraction
@@ -16,5 +18,6 @@ public:
 	static bool checkIfYouWannaRewrite(std::string word);
 	static void confirmation(std::string& confirmation);
 	static void getTypeOfTest(int& choice);
+	//static void readTestAnswers(std::vector<std::string>);
 };
 
