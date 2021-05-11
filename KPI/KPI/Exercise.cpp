@@ -1,7 +1,7 @@
 #include "Exercise.h"
 #include "ViewMessages.h"
 #include <iostream>
-#include <math.h>
+#include <cmath>
 using namespace std;
 
 vector<float> Exercise::right_triangle_first()
@@ -15,5 +15,21 @@ vector<float> Exercise::right_triangle_first()
 	results.push_back(round(asin((((float)secondParameter)/firstParameter)) * 1800.0 / M_PI) / 10.0); // Кут А
 	results.push_back(90 - results[0]); // Кут В
 	results.push_back(round(sqrt(pow(firstParameter, 2) - pow(secondParameter, 2)) * 10) / 10.0); // Сторона АС
+	return results;
+}
+
+vector<float> Exercise::right_triangle_third()
+{
+	const float M_PI = 3.14159265358979323846;
+	firstParameter = rand() % 30; //Катет АВ  b
+	secondParameter = rand() % 70 + 10; //прилеглий гострий кут А  альфа
+	thirdParameter = 90; //Прямий кут В
+	float angleInDegrees=(static_cast<float>(secondParameter))*M_PI/180;
+	
+	ViewMessages::ConditionOut("Знайти невідомі сторони й гострі кути прямокутного трикутника за катетом AB=" +
+		to_string(firstParameter) + " і гострим кутом А=" + to_string(secondParameter) + '.');
+	results.push_back((static_cast<float>(firstParameter))/cos(angleInDegrees)); // гіпотенуза АС   с
+	results.push_back(static_cast<float>(firstParameter)*tan(angleInDegrees)); // Катет ВС   a
+	results.push_back(90-results[1]); // гострий кут С    Бета
 	return results;
 }

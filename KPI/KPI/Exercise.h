@@ -11,5 +11,6 @@ protected:
 	std::vector<float> results;
 public:
 	std::vector<float> right_triangle_first();
+	std::vector<float> right_triangle_third();
 };
 
