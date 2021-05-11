@@ -2,74 +2,75 @@
 #include "ViewMessages.h"
 #include <iostream>
 #include <cmath>
+
 using namespace std;
 
 vector<float> ExerciseRightTriangle::first()
 {
-  firstParameter = rand() % 20 + 10; //Р“С–РїРѕС‚РµРЅСѓР·Р° AB
-  secondParameter = rand() % (firstParameter - 9) + 5; //РљР°С‚РµС‚ BC
-  thirdParameter = 90; //РџСЂСЏРјРёР№ РєСѓС‚ C
-  ViewMessages::ConditionOut("Р—Р°РґР°РЅРёР№ РїСЂСЏРјРѕРєСѓС‚РЅРёР№ С‚СЂРёРєСѓС‚РЅРёРє ABC. Р—РЅР°Р№С‚Рё РЅРµРІС–РґРѕРјС– СЃС‚РѕСЂРѕРЅРё Р№ РіРѕСЃС‚СЂС– РєСѓС‚Рё С‚СЂРёРєСѓС‚РЅРёРєР° Р·Р° РіС–РїРѕС‚РµРЅСѓР·РѕСЋ AB = " +
-    to_string(firstParameter) + "СЃРј С– РєР°С‚РµС‚РѕРј BC=" + to_string(secondParameter) + "cРј.");
-  results.push_back(round(asin((((float)secondParameter)/firstParameter)) * 1800.0 / M_PI) / 10.0); //РљСѓС‚ A
-  results.push_back(90 - results[0]); //РљСѓС‚ B
-  results.push_back(round(sqrt(pow(firstParameter, 2) - pow(secondParameter, 2)) * 10) / 10.0); //РЎС‚РѕСЂРѕРЅР° РђРЎ
-  return results;
+    firstParameter = rand() % 20 + 10; //Гіпотенуза AB
+    secondParameter = rand() % (firstParameter - 9) + 5; //Катет BC
+    thirdParameter = 90; //Прямий кут C
+    ViewMessages::ConditionOut("Заданий прямокутний трикутник ABC. Знайти невідомі сторони й гострі кути трикутника за гіпотенузою AB = " +
+        to_string(firstParameter) + "см і катетом BC=" + to_string(secondParameter) + "cм.");
+    results.push_back(round(asin((((float)secondParameter) / firstParameter)) * 1800.0 / M_PI) / 10.0); //Кут A
+    results.push_back(90 - results[0]); //Кут B
+    results.push_back(round(sqrt(pow(firstParameter, 2) - pow(secondParameter, 2)) * 10) / 10.0); //Сторона АС
+    return results;
 }
 
 vector<float> ExerciseRightTriangle::second()
 {
-  firstParameter = rand() % 20 + 5; //РџРµСЂС€РёР№ РєР°С‚РµС‚ AC
-  secondParameter = rand() % 20 + 5; //Р”СЂСѓРіРёР№ РєР°С‚РµС‚ BC
-  thirdParameter = 90; //РџСЂСЏРјРёР№ РєСѓС‚ C
-  ViewMessages::ConditionOut("Р—Р°РґР°РЅРёР№ РїСЂСЏРјРѕРєСѓС‚РЅРёР№ С‚СЂРёРєСѓС‚РЅРёРє ABC. Р—РЅР°Р№С‚Рё РіС–РїРѕС‚РµРЅСѓР·Сѓ С‚Р° РіРѕСЃС‚СЂС– РєСѓС‚Рё С‚СЂРёРєСѓС‚РЅРёРєР° Р·Р° РєР°С‚РµС‚РѕРј AC = " +
-    to_string(firstParameter) + "СЃРј С– РєР°С‚РµС‚РѕРј BC = " + to_string(secondParameter) + "СЃРј.");
-  results.push_back(round(sqrt(pow(firstParameter, 2) + pow(secondParameter, 2)) * 10) / 10.0); //Р“С–РїРѕС‚РµРЅСѓР·Р° AB
-  results.push_back(round(asin((((float)secondParameter)/results[0])) * 1800.0 / M_PI) / 10.0); //РљСѓС‚ Рђ
-  results.push_back(90 - results[1]); //РљСѓС‚ B
-  return results;
+    firstParameter = rand() % 20 + 5; //Перший катет AC
+    secondParameter = rand() % 20 + 5; //Другий катет BC
+    thirdParameter = 90; //Прямий кут C
+    ViewMessages::ConditionOut("Заданий прямокутний трикутник ABC. Знайти гіпотенузу та гострі кути трикутника за катетом AC = " +
+        to_string(firstParameter) + "см і катетом BC = " + to_string(secondParameter) + "см.");
+    results.push_back(round(sqrt(pow(firstParameter, 2) + pow(secondParameter, 2)) * 10) / 10.0); //Гіпотенуза AB
+    results.push_back(round(asin((((float)secondParameter) / results[0])) * 1800.0 / M_PI) / 10.0); //Кут А
+    results.push_back(90 - results[1]); //Кут B
+    return results;
 }
 
 vector<float> ExerciseRightTriangle::third()
 {
-  firstParameter = rand() % 30; //РљР°С‚РµС‚ РђР’  b
-  secondParameter = rand() % 70 + 10; //РїСЂРёР»РµРіР»РёР№ РіРѕСЃС‚СЂРёР№ РєСѓС‚ Рђ  Р°Р»СЊС„Р°
-  thirdParameter = 90; //РџСЂСЏРјРёР№ РєСѓС‚ Р’
-  float angleInRadians=(static_cast<float>(secondParameter)) * M_PI / 180;
-  ViewMessages::ConditionOut("Р—Р°РґР°РЅРёР№ РїСЂСЏРјРѕРєСѓС‚РЅРёР№ С‚СЂРёРєСѓС‚РЅРёРє ABC. Р—РЅР°Р№С‚Рё РЅРµРІС–РґРѕРјС– СЃС‚РѕСЂРѕРЅРё Р№ РіРѕСЃС‚СЂС– РєСѓС‚Рё С‚СЂРёРєСѓС‚РЅРёРєР° Р·Р° РєР°С‚РµС‚РѕРј AB = " +
-    to_string(firstParameter) + "СЃРј С– РіРѕСЃС‚СЂРёРј РєСѓС‚РѕРј Рђ = " + to_string(secondParameter) + '.');
-  results.push_back(round((static_cast<float>(firstParameter))/cos(angleInRadians) * 10)/10.0); // РіС–РїРѕС‚РµРЅСѓР·Р° РђРЎ   СЃ
-  results.push_back(round(static_cast<float>(firstParameter)*tan(angleInRadians) * 10) / 10.0); // РљР°С‚РµС‚ Р’РЎ   a
-  results.push_back(90 - secondParameter); // РіРѕСЃС‚СЂРёР№ РєСѓС‚ РЎ    Р‘РµС‚Р°
-  return results;
+    firstParameter = rand() % 30; //Катет АВ  b
+    secondParameter = rand() % 70 + 10; //прилеглий гострий кут А  альфа
+    thirdParameter = 90; //Прямий кут В
+    float angleInRadians = (static_cast<float>(secondParameter)) * M_PI / 180;
+    ViewMessages::ConditionOut("Заданий прямокутний трикутник ABC. Знайти невідомі сторони й гострі кути трикутника за катетом AB = " +
+        to_string(firstParameter) + "см і гострим кутом А = " + to_string(secondParameter) + '.');
+    results.push_back(round((static_cast<float>(firstParameter)) / cos(angleInRadians) * 10) / 10.0); // гіпотенуза АС   с
+    results.push_back(round(static_cast<float>(firstParameter) * tan(angleInRadians) * 10) / 10.0); // Катет ВС   a
+    results.push_back(90 - secondParameter); // гострий кут С    Бета
+    return results;
 }
 
 vector<float> ExerciseRightTriangle::fourth()
 {
-  firstParameter = rand() % 30; //РљР°С‚РµС‚ РђР’  b
-  secondParameter = rand() % 70 + 10; //РїСЂРѕС‚РёР»РµР¶РЅРёР№ РіРѕСЃС‚СЂРёР№ РєСѓС‚ C  Р±РµС‚Р°
-  thirdParameter = 90; //РџСЂСЏРјРёР№ РєСѓС‚ Р’
-  float angleInRadians=(static_cast<float>(secondParameter))*M_PI/180;
-  
-  ViewMessages::ConditionOut("Р—РЅР°Р№С‚Рё РЅРµРІС–РґРѕРјС– СЃС‚РѕСЂРѕРЅРё Р№ РіРѕСЃС‚СЂС– РєСѓС‚Рё РїСЂСЏРјРѕРєСѓС‚РЅРѕРіРѕ С‚СЂРёРєСѓС‚РЅРёРєР° Р·Р° РєР°С‚РµС‚РѕРј AB=" +
-    to_string(firstParameter) + " С– РіРѕСЃС‚СЂРёРј РєСѓС‚РѕРј РЎ=" + to_string(secondParameter) + '.');
-  results.push_back((static_cast<float>(firstParameter))/sin(angleInRadians)); // РіС–РїРѕС‚РµРЅСѓР·Р° РђРЎ   СЃ
-  results.push_back(90-secondParameter); // РіРѕСЃС‚СЂРёР№ РєСѓС‚ Рђ
-  angleInRadians=(results[1])*M_PI/180;
-  results.push_back(static_cast<float>(firstParameter)*tan(angleInRadians)); // РљР°С‚РµС‚ Р’РЎ   a
-  return results;
+    firstParameter = rand() % 30; //Катет АВ  b
+    secondParameter = rand() % 70 + 10; //протилежний гострий кут C  бета
+    thirdParameter = 90; //Прямий кут В
+    float angleInRadians = (static_cast<float>(secondParameter)) * M_PI / 180;
+
+    ViewMessages::ConditionOut("Знайти невідомі сторони й гострі кути прямокутного трикутника за катетом AB=" +
+        to_string(firstParameter) + " і гострим кутом С=" + to_string(secondParameter) + '.');
+    results.push_back((static_cast<float>(firstParameter)) / sin(angleInRadians)); // гіпотенуза АС   с
+    results.push_back(90 - secondParameter); // гострий кут А
+    angleInRadians = (results[1]) * M_PI / 180;
+    results.push_back(static_cast<float>(firstParameter) * tan(angleInRadians)); // Катет ВС   a
+    return results;
 }
 
 vector<float> ExerciseRightTriangle::fifth()
 {
-  firstParameter = rand() % 20 + 10; //Р“С–РїРѕС‚РµРЅСѓР·Р° AB
-  secondParameter = rand() % 70 + 10; //РџСЂРёР»РµРіР»РёР№ РіРѕСЃС‚СЂРёР№ РєСѓС‚ Рђ
-  thirdParameter = 90; //РџСЂСЏРјРёР№ РєСѓС‚ РЎ
-  float angleInRadians = (static_cast<float>(secondParameter)) * M_PI / 180;
-  ViewMessages::ConditionOut("Р—Р°РґР°РЅРёР№ РїСЂСЏРјРѕРєСѓС‚РЅРёРє С‚СЂРёРєСѓС‚РЅРёРє ABC. Р—РЅР°Р№С‚Рё РєР°С‚РµС‚Рё С‚Р° РЅРµРІС–РґРѕРјРёР№ РіРѕСЃС‚СЂРёР№ РєСѓС‚ С‚СЂРёРєСѓС‚РЅРёРєР° Р·Р° РіС–РїРѕС‚РµРЅСѓР·РѕСЋ AB = " +
-    to_string(firstParameter) + "СЃРј С– РїСЂРёР»РµРіР»РёРј РґРѕ РЅСЊРѕРіРѕ РіРѕСЃС‚СЂРёРј РєСѓС‚РѕРј Рђ = " + to_string(secondParameter) + '.');
-  results.push_back(round((float)firstParameter * cos(angleInRadians) * 10) / 10.0); //РљР°С‚РµС‚ РђРЎ
-  results.push_back(round((float)firstParameter * sin(angleInRadians) * 10) / 10.0); //РљР°С‚РµС‚ Р’РЎ
-  results.push_back(90 - secondParameter); //Р“РѕСЃС‚СЂРёР№ РєСѓС‚ Р’
-  return results;
+    firstParameter = rand() % 20 + 10; //Гіпотенуза AB
+    secondParameter = rand() % 70 + 10; //Прилеглий гострий кут А
+    thirdParameter = 90; //Прямий кут С
+    float angleInRadians = (static_cast<float>(secondParameter)) * M_PI / 180;
+    ViewMessages::ConditionOut("Заданий прямокутник трикутник ABC. Знайти катети та невідомий гострий кут трикутника за гіпотенузою AB = " +
+        to_string(firstParameter) + "см і прилеглим до нього гострим кутом А = " + to_string(secondParameter) + '.');
+    results.push_back(round((float)firstParameter * cos(angleInRadians) * 10) / 10.0); //Катет АС
+    results.push_back(round((float)firstParameter * sin(angleInRadians) * 10) / 10.0); //Катет ВС
+    results.push_back(90 - secondParameter); //Гострий кут В
+    return results;
 }
