@@ -1,6 +1,7 @@
 #include "WorkWithTests.h"
 #include "FileWriter.h"
 #include "ExerciseRightTriangle.h"
+#include "ExerciseArbitraryTriangle.h"
 #include <iostream>
 
 using namespace std;
@@ -124,8 +125,8 @@ void WorkWithTests::rightTriangleFifth()
 
 void WorkWithTests::arbitraryTriangleFirst()
 {
-	ExerciseRightTriangle task;
-	vector <float> results = task.second();
+	ExerciseArbitraryTriangle task;
+	vector <float> results = task.first();
 	cout << "Enter angle A:\n";
 	float angleC, angleA, angleB;
 	cin >> angleA;
@@ -147,7 +148,7 @@ void WorkWithTests::arbitraryTriangleFirst()
 }
 void WorkWithTests::arbitraryTriangleSecond()
 {
-	ExerciseRightTriangle task;
+	ExerciseArbitraryTriangle task;
 	vector <float> results = task.second();
 	cout << "Enter angle A:\n";
 	float angleC, angleA, cathetAC;
@@ -170,8 +171,8 @@ void WorkWithTests::arbitraryTriangleSecond()
 }
 void WorkWithTests::arbitraryTriangleThird()
 {
-	ExerciseRightTriangle task;
-	vector <float> results = task.second();
+	ExerciseArbitraryTriangle task;
+	vector <float> results = task.third();
 	cout << "Enter angle C:\n";
 	float angleC, cathetAC, cathetBC;
 	cin >> angleC;
