@@ -18,9 +18,12 @@ std::vector<float> ExerciseArbitraryTriangle::first()
 	while((AB+BC<AC)||(AC+BC<AB)||(AC+AB<BC));
 	ViewMessages::ConditionOut("������� �������� ��������� ABC. ������ ������ ���� ���������� �� �������� AB = " +
 		to_string(AB) + "��,  BC = " + to_string(BC) + "c�, AC = " + to_string(AC) + "��.");
-	results.push_back(round(acos((pow(AB, 2)+pow(BC, 2)-pow(AC, 2))/(2 * AB * BC))*10) / 10.0); //��� B
-	results.push_back(round(acos((pow(AC, 2)+pow(BC, 2)-pow(AB, 2))/(2 * AC * BC))*10) / 10.0); //��� C
-	results.push_back(180-results[0]-results[1]); //��� A
+	float B=acos((pow(AB, 2)+pow(BC, 2)-pow(AC, 2))/(2 * AB * BC));//��� B
+	float C=acos((pow(AC, 2)+pow(BC, 2)-pow(AB, 2))/(2 * AC * BC));//��� C
+	float A=180-B-C;																					//��� A
+	results.push_back(round(B*10) / 10.0);
+	results.push_back(round(C*10) / 10.0);
+	results.push_back(round(A*10) / 10.0);
 	return results;
 }
 
@@ -35,9 +38,12 @@ std::vector<float> ExerciseArbitraryTriangle::second()
 	} while (B == 90);
 	ViewMessages::ConditionOut("������� �������� ��������� ABC. ������ ������ ���� �� ������� ���������� �� �������� AB = " +
 		to_string(AB) + "��, �� = " + to_string(BC) + "�� �� ��� � = " + to_string(B) + '.');
-	results.push_back(round(sqrt(pow(AB,2)+pow(BC,2) - 2 * AB * BC * cos(B * M_PI / 180)) * 10)/10.0); //������� AC
-	results.push_back(round(acos((pow(results[0], 2) + pow(BC, 2) - pow(AB, 2)) / (2 * results[0] * BC)) * 10) / 10.0); //��� �
-	results.push_back(180 - B - results[1]); //��� �
+	float AC=sqrt(pow(AB,2)+pow(BC,2) - 2 * AB * BC * cos(B * M_PI / 180));//������� AC
+	float C=acos((pow(results[0], 2) + pow(BC, 2) - pow(AB, 2)) / (2 * AC * BC));//��� C
+	float A=180 - B - C;																						//��� A
+	results.push_back(round( AC* 10)/10.0);
+	results.push_back(round( C* 10) / 10.0);
+	results.push_back(round( A* 10) / 10.0);
 	return results;
 }
 
@@ -52,8 +58,11 @@ std::vector<float> ExerciseArbitraryTriangle::third()
 	} while (A + B < 175);
 	ViewMessages::ConditionOut("������� �������� ��������� ABC. ������ ������ ������� �� ��� ���������� �� �������� = " +
 		to_string(AB) + "��, ����� � = " + to_string(B) + " �� ����� A = " + to_string(A) + '.');
-	results.push_back(180 - B - A); // ��� �
-	results.push_back(round(AB * sin(B * M_PI / 180.0) / sin(results[0] * M_PI / 180.0) * 10) / 10.0); //������� ��
-	results.push_back(round(AB * sin(A * M_PI / 180.0) / sin(results[0] * M_PI / 180.0) * 10) / 10.0); //������� BC
+	float C=180 - B - A;														// ��� C
+	float AC=AB * sin(B * M_PI / 180.0) / sin(results[0] * M_PI / 180.0);//������� AC
+	float BC=AB * sin(A * M_PI / 180.0) / sin(results[0] * M_PI / 180.0);//������� BC
+	results.push_back(C); 
+	results.push_back(round(AC * 10) / 10.0);
+	results.push_back(round(BC * 10) / 10.0);
 	return results;
 }
