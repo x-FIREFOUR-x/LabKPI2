@@ -21,6 +21,7 @@ public:
 	static void showTheory();
 	static void showTheory(int n);
 	static void getTypeOfTest(int& choice);
+	static void getTypeOfTestRight(int& choice);
 	//static void readTestAnswers(std::vector<std::string>);
 };
 

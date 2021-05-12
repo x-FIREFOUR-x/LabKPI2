@@ -13,5 +13,7 @@ public:
 	static void editFilePassword(int ID, std::string oldLogin, std::string newPassword);
 	static void editFileName(std::string oldPath, std::string newPath, std::string newName);
 	static void editFileEmail(std::string oldPath, std::string newPath, std::string newEmail);
+	static void upScore(int ID);
+	static void downScore(int ID);
 };
 

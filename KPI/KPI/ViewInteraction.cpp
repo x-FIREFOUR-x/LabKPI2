@@ -215,3 +215,9 @@ void ViewInteraction::getTypeOfTest(int& choice)
 	cout<<"(0)Right triangle\n(1)Three sides\n(2)Two sides and an angle\n(3)The side and two angles\n(4)Leave tests:"<<endl;
 	cin>>choice;
 }
+void ViewInteraction::getTypeOfTestRight(int& choice)
+{
+	cout << "(0)First\n(1)Second\n(2)Third\n(3)Fourth\n(4)Fifth\n(5)Leave tests" << endl;
+	cin >> choice;
+}
+

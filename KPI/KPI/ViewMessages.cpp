@@ -59,3 +59,8 @@ void ViewMessages::ConditionOut(std::string condition)
 	cout << condition << endl;
 	SetConsoleOutputCP(866);
 }
+
+void ViewMessages::ScoreOut(int score)
+{
+	cout << "Your current score is: " << score << endl;
+}

@@ -41,8 +41,11 @@ void FileWriter::rewriteAccounts(int ID)
 void FileWriter::writeProfileData(Profile profileData)
 {
 	ofstream outProfile("Database/Profiles/" + std::to_string(profileData.getID()) + ".txt");
+	ofstream outProfile2("Database/Profiles/Scores/" + std::to_string(profileData.getID()) + ".txt");
+	outProfile2 << 0;
 	outProfile << profileData.getName() << " " << profileData.getEmail()<< "\n";
 	outProfile.close();
+	outProfile2.close();
 
 }
 
@@ -52,6 +55,29 @@ void FileWriter::writeLoginData(Profile profileData)
 	Accounts << profileData.getPassword() << " " << profileData.getLogin() << " " << profileData.getID() << "\n";
 	Accounts.close();
 }
+void FileWriter::upScore(int ID)
+{
+	int currentScore;
+	ifstream inFile("Database/Profiles/Scores/" + std::to_string(ID) + ".txt");
+	inFile >> currentScore;
+	currentScore++;
+	inFile.close();
+	ofstream outFile("Database/Profiles/Scores/" + std::to_string(ID) + ".txt", ios::trunc);
+	outFile << currentScore;
+	outFile.close();
+}
+void FileWriter::downScore(int ID)
+{
+	int currentScore;
+	ifstream inFile("Database/Profiles/Scores/" + std::to_string(ID) + ".txt");
+	inFile >> currentScore;
+	currentScore--;
+	inFile.close();
+	ofstream outFile("Database/Profiles/Scores/" + std::to_string(ID) + ".txt", ios::trunc);
+	outFile << currentScore;
+	outFile.close();
+}
+
 
 void FileWriter::clearFileData(string path)
 {
