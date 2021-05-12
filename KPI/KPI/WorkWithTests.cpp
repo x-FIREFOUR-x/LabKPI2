@@ -4,12 +4,15 @@
 #include "ExerciseArbitraryTriangle.h"
 #include <iostream>
 
+#include "ViewMessages.h"
+
 using namespace std;
 
 void WorkWithTests::rightTriangleFirst()
 {
 	ExerciseRightTriangle task;
 	vector <float> results = task.first();
+	ViewMessages::ConditionOut(task.getCondition());
 	cout<<"Enter angle A:\n";
 	float angleA, angleB, cathet;
 	cin>>angleA;
@@ -34,6 +37,7 @@ void WorkWithTests::rightTriangleSecond()
 {
 	ExerciseRightTriangle task;
 	vector <float> results = task.second();
+	ViewMessages::ConditionOut(task.getCondition());
 	cout << "Enter angle A:\n";
 	float angleA, angleB, hypothenuseAB;
 	cin >> angleA;
@@ -57,6 +61,7 @@ void WorkWithTests::rightTriangleThird()
 {
 	ExerciseRightTriangle task;
 	vector <float> results = task.third();
+	ViewMessages::ConditionOut(task.getCondition());
 	cout << "Enter angle C:\n";
 	float angleC, cathetBC, hypothenuseAC;
 	cin >> angleC;
@@ -80,6 +85,7 @@ void WorkWithTests::rightTriangleFourth()
 {
 	ExerciseRightTriangle task;
 	vector <float> results = task.fourth();
+	ViewMessages::ConditionOut(task.getCondition());
 	cout << "Enter angle A:\n";
 	float angleA, cathetBC, hypothenuseAC;
 	cin >> angleA;
@@ -103,6 +109,7 @@ void WorkWithTests::rightTriangleFifth()
 {
 	ExerciseRightTriangle task;
 	vector <float> results = task.fifth();
+	ViewMessages::ConditionOut(task.getCondition());
 	cout << "Enter cathet AC:\n";
 	float cathetAC, cathetBC, angleB;
 	cin >> cathetAC;
@@ -127,6 +134,7 @@ void WorkWithTests::arbitraryTriangleFirst()
 {
 	ExerciseArbitraryTriangle task;
 	vector <float> results = task.first();
+	ViewMessages::ConditionOut(task.getCondition());
 	cout << "Enter angle A:\n";
 	float angleC, angleA, angleB;
 	cin >> angleA;
@@ -150,6 +158,7 @@ void WorkWithTests::arbitraryTriangleSecond()
 {
 	ExerciseArbitraryTriangle task;
 	vector <float> results = task.second();
+	ViewMessages::ConditionOut(task.getCondition());
 	cout << "Enter angle A:\n";
 	float angleC, angleA, cathetAC;
 	cin >> angleA;
@@ -173,6 +182,7 @@ void WorkWithTests::arbitraryTriangleThird()
 {
 	ExerciseArbitraryTriangle task;
 	vector <float> results = task.third();
+	ViewMessages::ConditionOut(task.getCondition());
 	cout << "Enter angle C:\n";
 	float angleC, cathetAC, cathetBC;
 	cin >> angleC;

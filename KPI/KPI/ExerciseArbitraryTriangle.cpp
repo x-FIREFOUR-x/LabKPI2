@@ -6,6 +6,11 @@
 
 using namespace std;
 
+std::string ExerciseArbitraryTriangle::getCondition()
+{
+	return condition;
+}
+
 std::vector<float> ExerciseArbitraryTriangle::first()
 {
 	int AB = rand() % 20 + 10;
@@ -16,8 +21,7 @@ std::vector<float> ExerciseArbitraryTriangle::first()
 		AC = rand() % 20 + 13; 
 	}
 	while((AB+BC<AC)||(AC+BC<AB)||(AC+AB<BC));
-	ViewMessages::ConditionOut("������� �������� ��������� ABC. ������ ������ ���� ���������� �� �������� AB = " +
-		to_string(AB) + "��,  BC = " + to_string(BC) + "c�, AC = " + to_string(AC) + "��.");
+	condition="������� �������� ��������� ABC. ������ ������ ���� ���������� �� �������� AB = " + to_string(AB) + "��,  BC = " + to_string(BC) + "c�, AC = " + to_string(AC) + "��.";
 	float B=acos((pow(AB, 2)+pow(BC, 2)-pow(AC, 2))/(2 * AB * BC));
 	float C=acos((pow(AC, 2)+pow(BC, 2)-pow(AB, 2))/(2 * AC * BC));
 	float A=180-B-C;
@@ -36,8 +40,7 @@ std::vector<float> ExerciseArbitraryTriangle::second()
 	{
 		B = rand() % 130 + 20;
 	} while (B == 90);
-	ViewMessages::ConditionOut("������� �������� ��������� ABC. ������ ������ ���� �� ������� ���������� �� �������� AB = " +
-		to_string(AB) + "��, �� = " + to_string(BC) + "�� �� ��� � = " + to_string(B) + '.');
+	condition="������� �������� ��������� ABC. ������ ������ ���� �� ������� ���������� �� �������� AB = " + to_string(AB) + "��, �� = " + to_string(BC) + "�� �� ��� � = " + to_string(B) + '.';
 	float AC=sqrt(pow(AB,2)+pow(BC,2) - 2 * AB * BC * cos(B * M_PI / 180));
 	float C=acos((pow(results[0], 2) + pow(BC, 2) - pow(AB, 2)) / (2 * AC * BC));
 	float A=180 - B - C;
@@ -56,8 +59,7 @@ std::vector<float> ExerciseArbitraryTriangle::third()
 	{
 		A = rand() % 130 + 20; 
 	} while (A + B < 175);
-	ViewMessages::ConditionOut("������� �������� ��������� ABC. ������ ������ ������� �� ��� ���������� �� �������� = " +
-		to_string(AB) + "��, ����� � = " + to_string(B) + " �� ����� A = " + to_string(A) + '.');
+	condition="������� �������� ��������� ABC. ������ ������ ������� �� ��� ���������� �� �������� = " + to_string(AB) + "��, ����� � = " + to_string(B) + " �� ����� A = " + to_string(A) + '.';
 	float C=180 - B - A;
 	float AC=AB * sin(B * M_PI / 180.0) / sin(results[0] * M_PI / 180.0);
 	float BC=AB * sin(A * M_PI / 180.0) / sin(results[0] * M_PI / 180.0);
