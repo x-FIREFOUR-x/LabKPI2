@@ -114,3 +114,9 @@ bool FileReader::readCheckLogin(string login)
 	inFile.close();
 	return correct;
 }
+int FileReader::readScore(int ID ) {
+	int currentScore;
+	ifstream inFile("Database/Profiles/Scores/" + std::to_string(ID) + ".txt");
+	inFile >> currentScore;
+	return currentScore;
+}

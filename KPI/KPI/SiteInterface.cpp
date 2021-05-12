@@ -19,8 +19,8 @@ namespace fs = filesystem;
 void SiteInterface::createDefaultFiles()
 {
 	srand(time(NULL));
-	string fileNames[2] = { "Database","Database/Profiles" };
-	for (int i = 0; i < 2; i++)
+	string fileNames[3] = { "Database","Database/Profiles","Database/Profiles/Scores" };
+	for (int i = 0; i < 3; i++)
 	{
 		if (fs::is_directory(fileNames[i]) == false)
 		{
@@ -67,29 +67,48 @@ void SiteInterface::showMenu()
 				{
 					int testChoice;
 					ViewInteraction::getTypeOfTest(testChoice);
-					WorkWithTests tests;
-					if(testChoice==0)
+					WorkWithTests tests(current.getID());
+					if (testChoice == 0)
 					{
+						int testRightChoice = 0;
+						do{
+							ViewInteraction::getTypeOfTestRight(testRightChoice);
+							if (testRightChoice == 0) {
+								tests.rightTriangleFirst();
+							}
+							else if (testRightChoice == 1) {
+								tests.rightTriangleSecond();
+							}
+							else if (testRightChoice == 2) {
+								tests.rightTriangleThird();
+							}
+							else if (testRightChoice == 3) {
+								tests.rightTriangleFourth();
+							}
+							else if (testRightChoice == 4) {
 
-						tests.rightTriangleFirst();
-						tests.rightTriangleSecond();
-						tests.rightTriangleThird();
-						tests.rightTriangleFourth();
-						tests.rightTriangleFifth();
+								tests.rightTriangleFifth();
+							}
+						} while (testRightChoice != 5);
 					}
-					else if(testChoice==1)
+					else if (testChoice == 1)
 					{
-						
+						tests.arbitraryTriangleFirst();
 					}
-					else if(testChoice==2)
+					else if (testChoice == 2)
 					{
-						
+						tests.arbitraryTriangleSecond();
+					}
+					else if (testChoice == 3)
+					{
+						tests.arbitraryTriangleThird();
 					}
 
 				}
 				else if (action == 2)
 				{
-
+					int currentScore = FileReader::readScore(ID);
+					ViewMessages::ScoreOut(currentScore);
 				}
 				else if (action == 3)
 				{
