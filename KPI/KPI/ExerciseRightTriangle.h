@@ -1,9 +1,9 @@
 #pragma once
 #include <vector>
-#include "Exercise.h"
 
-class ExerciseRightTriangle :public Exercise
+class ExerciseRightTriangle
 {
+	std::vector<float> results;
 public:
 	std::vector<float> first();
 	std::vector<float> second();

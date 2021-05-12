@@ -2,53 +2,58 @@
 #include "ViewMessages.h"
 #include <cmath>
 
+# define M_PI           3.14159265358979323846
+
 using namespace std;
 
 std::vector<float> ExerciseArbitraryTriangle::first()
 {
-	firstParameter = rand() % 20 + 10; //������� AB
-	secondParameter = rand() % 20 + 10; //������� BC
+	int AB = rand() % 20 + 10; //������� AB
+	int BC = rand() % 20 + 10; //������� BC
+	int AC;						//������� AC
 	do
 	{
-		thirdParameter = rand() % 20 + 13; //������� AC
+		AC = rand() % 20 + 13; 
 	}
-	while((firstParameter+secondParameter<thirdParameter)||(thirdParameter+secondParameter<firstParameter)||(thirdParameter+firstParameter<secondParameter));
+	while((AB+BC<AC)||(AC+BC<AB)||(AC+AB<BC));
 	ViewMessages::ConditionOut("������� �������� ��������� ABC. ������ ������ ���� ���������� �� �������� AB = " +
-		to_string(firstParameter) + "��,  BC = " + to_string(secondParameter) + "c�, AC = " + to_string(thirdParameter) + "��.");
-	results.push_back(round(acos((pow(firstParameter, 2)+pow(secondParameter, 2)-pow(thirdParameter, 2))/(2 * firstParameter * secondParameter))*10) / 10.0); //��� B
-	results.push_back(round(acos((pow(thirdParameter, 2)+pow(secondParameter, 2)-pow(firstParameter, 2))/(2 * thirdParameter * secondParameter))*10) / 10.0); //��� C
+		to_string(AB) + "��,  BC = " + to_string(BC) + "c�, AC = " + to_string(AC) + "��.");
+	results.push_back(round(acos((pow(AB, 2)+pow(BC, 2)-pow(AC, 2))/(2 * AB * BC))*10) / 10.0); //��� B
+	results.push_back(round(acos((pow(AC, 2)+pow(BC, 2)-pow(AB, 2))/(2 * AC * BC))*10) / 10.0); //��� C
 	results.push_back(180-results[0]-results[1]); //��� A
 	return results;
 }
 
 std::vector<float> ExerciseArbitraryTriangle::second()
 {
-	firstParameter = rand() % 20 + 10; //������� AB
-	secondParameter = rand() % 20 + 10; //������� BC
+	int AB = rand() % 20 + 10; //������� AB
+	int BC = rand() % 20 + 10; //������� BC
+	int B;						 //��� B
 	do
 	{
-		thirdParameter = rand() % 130 + 20; //��� B
-	} while (thirdParameter == 90);
+		B = rand() % 130 + 20;
+	} while (B == 90);
 	ViewMessages::ConditionOut("������� �������� ��������� ABC. ������ ������ ���� �� ������� ���������� �� �������� AB = " +
-		to_string(firstParameter) + "��, �� = " + to_string(secondParameter) + "�� �� ��� � = " + to_string(thirdParameter) + '.');
-	results.push_back(round(sqrt(pow(firstParameter,2)+pow(secondParameter,2) - 2 * firstParameter * secondParameter * cos(thirdParameter * M_PI / 180)) * 10)/10.0); //������� AC
-	results.push_back(round(acos((pow(results[0], 2) + pow(secondParameter, 2) - pow(firstParameter, 2)) / (2 * results[0] * secondParameter)) * 10) / 10.0); //��� �
-	results.push_back(180 - thirdParameter - results[1]); //��� �
+		to_string(AB) + "��, �� = " + to_string(BC) + "�� �� ��� � = " + to_string(B) + '.');
+	results.push_back(round(sqrt(pow(AB,2)+pow(BC,2) - 2 * AB * BC * cos(B * M_PI / 180)) * 10)/10.0); //������� AC
+	results.push_back(round(acos((pow(results[0], 2) + pow(BC, 2) - pow(AB, 2)) / (2 * results[0] * BC)) * 10) / 10.0); //��� �
+	results.push_back(180 - B - results[1]); //��� �
 	return results;
 }
 
 std::vector<float> ExerciseArbitraryTriangle::third()
 {
-	firstParameter = rand() % 20 + 10; //������� AB
-	secondParameter = rand () % 130 + 20; //��� B
+	int AB = rand() % 20 + 10; //������� AB
+	int B = rand () % 130 + 20; //��� B
+	int A;//��� A
 	do
 	{
-		thirdParameter = rand() % 130 + 20; //��� A
-	} while (thirdParameter + secondParameter < 175);
+		A = rand() % 130 + 20; 
+	} while (A + B < 175);
 	ViewMessages::ConditionOut("������� �������� ��������� ABC. ������ ������ ������� �� ��� ���������� �� �������� = " +
-		to_string(firstParameter) + "��, ����� � = " + to_string(secondParameter) + " �� ����� A = " + to_string(thirdParameter) + '.');
-	results.push_back(180 - secondParameter - thirdParameter); // ��� �
-	results.push_back(round(firstParameter * sin(secondParameter * M_PI / 180.0) / sin(results[0] * M_PI / 180.0) * 10) / 10.0); //������� ��
-	results.push_back(round(firstParameter * sin(thirdParameter * M_PI / 180.0) / sin(results[0] * M_PI / 180.0) * 10) / 10.0); //������� BC
+		to_string(AB) + "��, ����� � = " + to_string(B) + " �� ����� A = " + to_string(A) + '.');
+	results.push_back(180 - B - A); // ��� �
+	results.push_back(round(AB * sin(B * M_PI / 180.0) / sin(results[0] * M_PI / 180.0) * 10) / 10.0); //������� ��
+	results.push_back(round(AB * sin(A * M_PI / 180.0) / sin(results[0] * M_PI / 180.0) * 10) / 10.0); //������� BC
 	return results;
 }
