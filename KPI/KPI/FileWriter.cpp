@@ -71,7 +71,7 @@ void FileWriter::downScore(int ID)
 	int currentScore;
 	ifstream inFile("Database/Profiles/Scores/" + std::to_string(ID) + ".txt");
 	inFile >> currentScore;
-	currentScore--;
+	if(currentScore > 0)currentScore--;
 	inFile.close();
 	ofstream outFile("Database/Profiles/Scores/" + std::to_string(ID) + ".txt", ios::trunc);
 	outFile << currentScore;
