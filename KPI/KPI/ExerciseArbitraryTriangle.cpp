@@ -21,7 +21,7 @@ std::vector<float> ExerciseArbitraryTriangle::first()
 		AC = rand() % 20 + 13; 
 	}
 	while((AB+BC<AC)||(AC+BC<AB)||(AC+AB<BC));
-	condition= "Заданий довільний трикутник ABC. Знайти невідомі кути трикутника за стороною AB = " + to_string(AB) + "см,  BC = " + to_string(BC) + "cм, AC = " + to_string(AC) + "см.";
+	condition= "Заданий довільний трикутник ABC. Знайти невідомі кути трикутника за стороною AB = " + to_string(AB) + "см,  BC = " + to_string(BC) + "cм, AC = " + to_string(AC) + "см.\n(Відповіді давати з точніст'ю з одного знаку після коми)";
 	float B=acos((pow(AB, 2)+pow(BC, 2)-pow(AC, 2))/(2 * AB * BC));
 	float C=acos((pow(AC, 2)+pow(BC, 2)-pow(AB, 2))/(2 * AC * BC));
 	float A=180-B-C;
@@ -40,7 +40,7 @@ std::vector<float> ExerciseArbitraryTriangle::second()
 	{
 		B = rand() % 130 + 20;
 	} while (B == 90);
-	condition = "Заданий довільний трикутник ABC. Знайти невідомі кути та сторону трикутника за стороною AB = " + to_string(AB) + "см, ВС = " + to_string(BC) + "см та кут В = " + to_string(B) + '.';
+	condition = "Заданий довільний трикутник ABC. Знайти невідомі кути та сторону трикутника за стороною AB = " + to_string(AB) + "см, ВС = " + to_string(BC) + "см та кут В = " + to_string(B) + ".\n(Відповіді давати з точніст'ю з одного знаку після коми)";
 	float AC = sqrt(pow(AB, 2) + pow(BC, 2) - 2 * AB * BC * cos(B * M_PI / 180));
 	results.push_back(round(AC * 10) / 10.0);
 	float C = acos((pow(results[0], 2) + pow(BC, 2) - pow(AB, 2)) / (2 * AC * BC));
@@ -59,7 +59,7 @@ std::vector<float> ExerciseArbitraryTriangle::third()
 	{
 		A = rand() % 130 + 20; 
 	} while (A + B > 175);
-	condition = "Заданий довільний трикутник ABC. Знайти невідомі кути та сторону трикутника за стороною AB = " + to_string(AB) + "см, ВС = " + to_string(B) + "см та кут В = " + to_string(A) + '.';
+	condition = "Заданий довільний трикутник ABC. Знайти невідомі кути та сторону трикутника за стороною AB = " + to_string(AB) + "см, ВС = " + to_string(B) + "см та кут В = " + to_string(A) + ".\n(Відповіді давати з точніст'ю з одного знаку після коми)";
 	float C=180 - B - A;
 	results.push_back(C);
 	float AC=AB * sin(B * M_PI / 180.0) / sin(results[0] * M_PI / 180.0);
