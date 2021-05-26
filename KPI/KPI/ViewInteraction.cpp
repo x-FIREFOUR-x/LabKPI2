@@ -125,44 +125,49 @@ void ViewInteraction::showTheory()
 	clearScreen();
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	
 	//cout << "���������" << endl;
 	vector<string> str;
 	str = Theory::getInfo(0);
+	string strchoose;
+	int choose;
 	for (int i = 0; i < str.size(); i++)
 	{
 		cout << str[i];
 	}
 	cout << endl;
-	cout << "Choose a section(or press 0 to leave): ";
-	int n;
-	cin >> n;
-	if (n != 0)
+	do
+	{
+		cout << "Choose a section(or press 0 to leave): ";
+	} while (!Validation::PickCheck(strchoose, 12));
+	choose = stoi(strchoose);
+	if (choose != 0)
 	{
 		str.clear();
 		clearScreen();
-		str = Theory::getInfo(n);
+		str = Theory::getInfo(choose);
 		for (int i = 0; i < str.size(); i++)
 		{
 			cout << str[i];
 		}
 		cout << endl;
-		if (n > 1)
-			cout << "(0)Previous page\n";
-		if (n < 11)
-			cout << "(1)Next page\n";
-		cout << "(2)Close\n";
 		int operation;
-		cin >> operation;
-
-
-		if ((operation == 0) && (n > 1))
+		string strOperation;
+		do
 		{
-			showTheory(n - 1);
+			if (choose > 1)
+				cout << "(0)Previous page\n";
+			if (choose < 11)
+				cout << "(1)Next page\n";
+			cout << "(2)Close\n";
+		} while (!Validation::PickCheck(strOperation, 3));
+		operation = stoi(strOperation);
+		if ((operation == 0) && (choose > 1))
+		{
+			showTheory(choose - 1);
 		}
-		if ((operation == 1) && (n < 11))
+		if ((operation == 1) && (choose < 11))
 		{
-			showTheory(n + 1);
+			showTheory(choose + 1);
 		}
 		if (operation == 2)
 		{
@@ -186,13 +191,17 @@ void ViewInteraction::showTheory(int n)
 		cout << str[i];
 	}
 	cout << endl;
-	if (n > 1)
-		cout << "(0)Previous page\n";
-	if (n < 11)
-		cout << "(1)Next page\n";
-	cout << "(2)Close\n";
 	int operation;
-	cin >> operation;
+	string strOperation;
+	do
+	{
+		if (n > 1)
+			cout << "(0)Previous page\n";
+		if (n < 11)
+			cout << "(1)Next page\n";
+		cout << "(2)Close\n";
+	} while (!Validation::PickCheck(strOperation, 3));
+	operation = stoi(strOperation);
 	SetConsoleOutputCP(866);
 	if ((operation == 0) && (n > 1))
 	{
@@ -212,12 +221,21 @@ void ViewInteraction::showTheory(int n)
 
 void ViewInteraction::getTypeOfTest(int& choice)
 {
-	cout<<"(0)Right triangle\n(1)Three sides\n(2)Two sides and an angle\n(3)The side and two angles\n(4)Leave tests:"<<endl;
-	cin>>choice;
+	string strChoice;
+	do
+	{
+		cout << "(0)Right triangle\n(1)Three sides\n(2)Two sides and an angle\n(3)The side and two angles\n(4)Leave tests:" << endl;
+	} while(!Validation::PickCheck(strChoice, 5));
+	choice = stoi(strChoice);
 }
+
 void ViewInteraction::getTypeOfTestRight(int& choice)
 {
-	cout << "(0)First\n(1)Second\n(2)Third\n(3)Fourth\n(4)Fifth\n(5)Leave tests" << endl;
-	cin >> choice;
+	string strChoice;
+	do
+	{
+		cout << "(0)First\n(1)Second\n(2)Third\n(3)Fourth\n(4)Fifth\n(5)Leave tests" << endl;
+	} while (!Validation::PickCheck(strChoice, 6));
+	choice = stoi(strChoice);
 }
 
