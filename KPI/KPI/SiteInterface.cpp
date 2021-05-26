@@ -69,10 +69,10 @@ void SiteInterface::showMenu()
 					bool control = false;
 					ViewInteraction::getTypeOfTest(testChoice);
 					WorkWithTests tests(current.getID(), control);
+					ViewInteraction::clearScreen();
 					if (testChoice == 0)
 					{
 						int testRightChoice = 0;
-						ViewInteraction::clearScreen();
 						do{
 							ViewInteraction::getTypeOfTestRight(testRightChoice);
 							ViewInteraction::clearScreen();
