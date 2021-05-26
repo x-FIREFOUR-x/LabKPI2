@@ -250,7 +250,7 @@ void ViewInteraction::getTypeOfTestRight(int& choice)
 	string strChoice;
 	do
 	{
-		cout << "(0)First\n(1)Second\n(2)Third\n(3)Fourth\n(4)Fifth\n(5)Leave tests" << endl;
+		cout << "(0)Hypothenuse adn Cathetus\n(1)Two cathetus\n(2)Cathetus and an angle\n(3)Cathetus and an opposite angle\n(4)Hypotenuse and an angle\n(5)Leave tests" << endl;
 		if (cin.peek() == '\n') {
 			cin.ignore();
 		}
