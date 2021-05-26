@@ -128,15 +128,15 @@ void ViewInteraction::showTheory()
 	//cout << "���������" << endl;
 	vector<string> str;
 	str = Theory::getInfo(0);
-	for (int i = 0; i < str.size(); i++)
-	{
-		cout << str[i];
-	}
-	cout << endl;
 	string strchoose;
 	int choose;
 	do
 	{
+		for (int i = 0; i < str.size(); i++)
+		{
+			cout << str[i];
+		}
+		cout << endl;
 		cout << "Choose a section(or press 0 to leave): ";
 		if (cin.peek() == '\n') {
 			cin.ignore();
