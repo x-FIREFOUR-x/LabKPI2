@@ -35,12 +35,12 @@ void ViewInteraction::profilePick(int& action) {
 	string action1;
 	do
 	{
-		cout << "(0)Check theory\n(1)Do tests\n(2)Check your score\n(3)Edit your profile\n(4)Delete your profile\n(5)Log out:" << endl;
+		cout << "(0)Check theory\n(1)Do tests\n(2)Check your score\n(3)Edit your profile\n(4)Delete your profile\n(5)Clear progres\n(6)Log out:" << endl;
 		if (cin.peek() == '\n') {
 			cin.ignore();
 		}
 		getline(cin, action1);
-	} while (!Validation::PickCheck(action1, 5));
+	} while (!Validation::PickCheck(action1, 6));
 	action = stoi(action1);
 }
 

@@ -16,5 +16,6 @@ public:
 	static void verificationConfirmed();
 	static void ConditionOut(std::string);
 	static void ScoreOut(int* score);
+	static void clearProgresSuccesfull();
 };
 

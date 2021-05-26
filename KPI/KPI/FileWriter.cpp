@@ -102,7 +102,12 @@ void FileWriter::setSolved(int ID, int number_kind_test)
 	outFile << scores[7];
 	outFile.close();
 }
-
+void FileWriter::clearResultTests(int ID)
+{
+	ofstream outFile("Database/Profiles/Scores/" + std::to_string(ID) + ".txt");
+	outFile << "0 0 0 0 0 0 0 0";
+	outFile.close();
+}
 void FileWriter::clearFileData(string path)
 {
 	ofstream outFile(path, ios::trunc);

@@ -75,3 +75,8 @@ void ViewMessages::ScoreOut(int* score)
 	cout << "The side and two angles " << (int)score[7] << "/" << "1" << endl;
 
 }
+
+void ViewMessages::clearProgresSuccesfull()
+{
+	cout << "Your progress solved tests succesfull clear" << endl;
+}

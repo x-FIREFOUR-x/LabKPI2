@@ -124,11 +124,9 @@ int* FileReader::readScore(int ID )
 	int* scores = new int[8];
 	string score;
 	getline(inFile, score);
-	cout << score << endl;
 	for (int i = 0; i < 8; i++)
 	{
 		scores[i] = stoi(score.substr(i*2,1));
-		//cout << stoi(score.substr(i * 2, 1)) << endl;
 	}
 
 	return scores;

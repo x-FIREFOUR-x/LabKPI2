@@ -121,7 +121,7 @@ void SiteInterface::showMenu()
 					if (confirmation == "0")
 					{
 						AccountManagement::deleteProfile(ID);
-						action = 5;
+						action = 6;
 						profileIsDeleted = true;
 					}
 					else
@@ -129,7 +129,12 @@ void SiteInterface::showMenu()
 						ViewInteraction::clearScreen();
 					}
 				}
-			} while (action != 5);
+				else if (action == 5)
+				{
+					FileWriter::clearResultTests(ID);
+					ViewMessages::clearProgresSuccesfull();
+				}
+			} while (action != 6);
 			if (!profileIsDeleted)
 			{
 				ViewInteraction::clearScreen();

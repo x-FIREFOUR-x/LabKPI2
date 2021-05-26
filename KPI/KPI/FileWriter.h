@@ -16,5 +16,6 @@ public:
 	static void upScore(int ID);
 	static void downScore(int ID);
 	static void setSolved(int ID, int number_kind_test);
+	static void clearResultTests(int ID);
 };
 
