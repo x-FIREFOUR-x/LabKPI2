@@ -4,6 +4,7 @@
 #include "ExerciseArbitraryTriangle.h"
 #include <iostream>
 #include "ViewMessages.h"
+#include "ViewInteraction.h"
 #include "Validation.h"
 #include "SolutionPrinterTriangle.h"
 #include "SolutionPrinterRightTriangle.h"
@@ -41,6 +42,7 @@ void WorkWithTests::rightTriangleFirst()
 	{
 		if (!isControlTest)
 		{
+			ViewInteraction::clearScreen();
 			cout << "Your answers are correct!\n";
 			FileWriter::upScore(ID);
 		}
@@ -51,6 +53,7 @@ void WorkWithTests::rightTriangleFirst()
 	{
 		if (!isControlTest)
 		{
+			ViewInteraction::clearScreen();
 			cout << "You are wrong!\n";
 			SolutionPrinterRightTriangle::printFirstSolution(results);
 			FileWriter::downScore(ID);
@@ -90,6 +93,7 @@ void WorkWithTests::rightTriangleSecond()
 	{
 		if (!isControlTest)
 		{
+			ViewInteraction::clearScreen();
 			cout << "Your answers are correct!\n";
 			FileWriter::upScore(ID);
 		}
@@ -100,6 +104,7 @@ void WorkWithTests::rightTriangleSecond()
 	{
 		if (!isControlTest)
 		{
+			ViewInteraction::clearScreen();
 			cout << "You are wrong!\n";
 			SolutionPrinterRightTriangle::printSecondSolution(results);
 			FileWriter::downScore(ID);
@@ -138,6 +143,7 @@ void WorkWithTests::rightTriangleThird()
 	{
 		if (!isControlTest)
 		{
+			ViewInteraction::clearScreen();
 			cout << "Your answers are correct!\n";
 			FileWriter::upScore(ID);
 		}
@@ -148,6 +154,7 @@ void WorkWithTests::rightTriangleThird()
 	{
 		if (!isControlTest)
 		{
+			ViewInteraction::clearScreen();
 			cout << "You are wrong!\n";
 			SolutionPrinterRightTriangle::printThirdSolution(results);
 			FileWriter::downScore(ID);
@@ -186,6 +193,7 @@ void WorkWithTests::rightTriangleFourth()
 	{
 		if (!isControlTest)
 		{
+			ViewInteraction::clearScreen();
 			cout << "Your answers are correct!\n";
 			FileWriter::upScore(ID);
 		}
@@ -196,6 +204,7 @@ void WorkWithTests::rightTriangleFourth()
 	{
 		if (!isControlTest)
 		{
+			ViewInteraction::clearScreen();
 			cout << "You are wrong!\n";
 			SolutionPrinterRightTriangle::printFourthSolution(results);
 			FileWriter::downScore(ID);
@@ -235,6 +244,7 @@ void WorkWithTests::rightTriangleFifth()
 	{
 		if (!isControlTest)
 		{
+			ViewInteraction::clearScreen();
 			cout << "Your answers are correct!\n";
 			FileWriter::upScore(ID);
 		}
@@ -245,6 +255,7 @@ void WorkWithTests::rightTriangleFifth()
 	{
 		if (!isControlTest)
 		{
+			ViewInteraction::clearScreen();
 			cout << "You are wrong!\n";
 			SolutionPrinterRightTriangle::printFifthSolution(results);
 			FileWriter::downScore(ID);
@@ -284,6 +295,7 @@ void WorkWithTests::arbitraryTriangleFirst()
 	{
 		if (!isControlTest)
 		{
+			ViewInteraction::clearScreen();
 			cout << "Your answers are correct!\n";
 			FileWriter::upScore(ID);
 		}
@@ -294,6 +306,7 @@ void WorkWithTests::arbitraryTriangleFirst()
 	{
 		if (!isControlTest)
 		{
+			ViewInteraction::clearScreen();
 			cout << "You are wrong!\n";
 			SolutionPrinterTriangle::printFirstSolution(results);
 			FileWriter::downScore(ID);
@@ -332,6 +345,7 @@ void WorkWithTests::arbitraryTriangleSecond()
 	{
 		if (!isControlTest)
 		{
+			ViewInteraction::clearScreen();
 			cout << "Your answers are correct!\n";
 			FileWriter::upScore(ID);
 		}
@@ -342,6 +356,7 @@ void WorkWithTests::arbitraryTriangleSecond()
 	{
 		if (!isControlTest)
 		{
+			ViewInteraction::clearScreen();
 			cout << "You are wrong!\n";
 			SolutionPrinterTriangle::printSecondSolution(results);
 			FileWriter::downScore(ID);
@@ -383,6 +398,7 @@ void WorkWithTests::arbitraryTriangleThird()
 	{
 		if (!isControlTest)
 		{
+			ViewInteraction::clearScreen();
 			cout << "Your answers are correct!\n";
 			FileWriter::upScore(ID);
 		}
@@ -393,6 +409,7 @@ void WorkWithTests::arbitraryTriangleThird()
 	{
 		if (!isControlTest)
 		{
+			ViewInteraction::clearScreen();
 			cout << "You are wrong!\n";
 			SolutionPrinterTriangle::printThirdSolution(results);
 			FileWriter::downScore(ID);
@@ -428,6 +445,7 @@ void WorkWithTests::controlTest()
 		cout << endl;
 		test.erase(test.begin() + k);
 	}
-	cout << "You have answered: " << count << "/20" << endl << endl;
+	ViewInteraction::clearScreen();
+	cout << "You have answered: " << count << "/8" << endl << endl;
 	system("pause");
 }

@@ -148,6 +148,7 @@ void ViewInteraction::showTheory()
 	{
 		str.clear();
 		clearScreen();
+		cout << "check" << choose << endl;
 		str = Theory::getInfo(choose);
 		int operation;
 		string strOperation;
