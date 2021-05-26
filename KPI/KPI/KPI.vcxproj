@@ -144,7 +144,6 @@
     <ClCompile Include="AccountManagement.cpp" />
     <ClCompile Include="ApplyTheRegistration.cpp" />
     <ClCompile Include="ExerciseRightTriangle.cpp" />
-    <ClCompile Include="ExerciseArbitraryTriangle.cpp" />
     <ClCompile Include="FileReader.cpp" />
     <ClCompile Include="FileWriter.cpp" />
     <ClCompile Include="main.cpp" />
@@ -152,6 +151,7 @@
     <ClCompile Include="SiteInterface.cpp" />
     <ClCompile Include="SolutionPrinterRightTriangle.cpp" />
     <ClCompile Include="SolutionPrinterTriangle.cpp" />
+    <ClCompile Include="ExerciseArbitraryTriangle.cpp" />
     <ClCompile Include="Theory.cpp" />
     <ClCompile Include="Validation.cpp" />
     <ClCompile Include="ViewInteraction.cpp" />

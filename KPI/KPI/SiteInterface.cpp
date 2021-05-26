@@ -66,52 +66,58 @@ void SiteInterface::showMenu()
 				else if (action == 1)
 				{
 					int testChoice;
-					bool control = false;
-					ViewInteraction::getTypeOfTest(testChoice);
-					WorkWithTests tests(current.getID(), control);
-					ViewInteraction::clearScreen();
-					if (testChoice == 0)
+					do
 					{
-						int testRightChoice = 0;
-						do{
-							ViewInteraction::getTypeOfTestRight(testRightChoice);
-							ViewInteraction::clearScreen();
-							if (testRightChoice == 0) {
-								tests.rightTriangleFirst();
-							}
-							else if (testRightChoice == 1) {
-								tests.rightTriangleSecond();
-							}
-							else if (testRightChoice == 2) {
-								tests.rightTriangleThird();
-							}
-							else if (testRightChoice == 3) {
-								tests.rightTriangleFourth();
-							}
-							else if (testRightChoice == 4) {
-
-								tests.rightTriangleFifth();
-							}
-						} while (testRightChoice != 5);
-					}
-					else if (testChoice == 1)
-					{
-						tests.arbitraryTriangleFirst();
-					}
-					else if (testChoice == 2)
-					{
-						tests.arbitraryTriangleSecond();
-					}
-					else if (testChoice == 3)
-					{
-						tests.arbitraryTriangleThird();
-					}
-					else if (testChoice == 4)
-					{
-						tests.setIsControlTest(true);
-						tests.controlTest();
-					}
-
+						bool control = false;
+						ViewInteraction::getTypeOfTest(testChoice);
+						WorkWithTests tests(current.getID(), control);
+						ViewInteraction::clearScreen();
+						if (testChoice == 0)
+						{
+							int testRightChoice = 0;
+							do{
+								ViewInteraction::getTypeOfTestRight(testRightChoice);
+								ViewInteraction::clearScreen();
+								if (testRightChoice == 0) {
+									tests.rightTriangleFirst();
+								}
+								else if (testRightChoice == 1) {
+									tests.rightTriangleSecond();
+								}
+								else if (testRightChoice == 2) {
+									tests.rightTriangleThird();
+								}
+								else if (testRightChoice == 3) {
+									tests.rightTriangleFourth();
+								}
+								else if (testRightChoice == 4) {	
+									tests.rightTriangleFifth();
+								}
+							} while (testRightChoice != 5);
+						}		
+						else if (testChoice == 1)
+						{
+							int testArbitraryTriangle = 0;
+							do{
+								ViewInteraction::getTypeOfTestArbitrary(testArbitraryTriangle);
+								ViewInteraction::clearScreen();
+								if (testArbitraryTriangle == 0) {
+									tests.arbitraryTriangleFirst();
+								}
+								else if (testArbitraryTriangle == 1) {
+									tests.arbitraryTriangleSecond();
+								}
+								else if (testArbitraryTriangle == 2) {
+									tests.arbitraryTriangleThird();
+								}
+							} while (testArbitraryTriangle != 3);
+						}
+						else if (testChoice == 2)
+						{
+							tests.setIsControlTest(true);
+							tests.controlTest();
+						}
+					}while(testChoice!=3);	
 				}
 				else if (action == 2)
 				{

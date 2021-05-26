@@ -332,7 +332,7 @@ void WorkWithTests::arbitraryTriangleSecond()
 			cin.ignore();
 		}
 		getline(cin, strAngleA);
-		cout << "Enter cathet AC:\n";
+		cout << "Enter side AC:\n";
 		if (cin.peek() == '\n') {
 			cin.ignore();
 		}
@@ -377,12 +377,12 @@ void WorkWithTests::arbitraryTriangleThird()
 			cin.ignore();
 		}
 		getline(cin, strAngleC);
-		cout << "Enter cathet AC:\n";
+		cout << "Enter side AC:\n";
 		if (cin.peek() == '\n') {
 			cin.ignore();
 		}
 		getline(cin, strCathetAC);
-		cout << "Enter cathet BC:\n";
+		cout << "Enter side BC:\n";
 		if (cin.peek() == '\n') {
 			cin.ignore();
 		}
@@ -445,7 +445,7 @@ void WorkWithTests::controlTest()
 		cout << endl;
 		test.erase(test.begin() + k);
 	}
-	ViewInteraction::clearScreen();
 	cout << "You have answered: " << count << "/8" << endl << endl;
 	ViewInteraction::Pause();
+	ViewInteraction::clearScreen();
 }

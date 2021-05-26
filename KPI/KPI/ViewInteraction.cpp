@@ -35,7 +35,7 @@ void ViewInteraction::profilePick(int& action) {
 	string action1;
 	do
 	{
-		cout << "(0)Check theory\n(1)Do tests\n(2)Check your score\n(3)Edit your profile\n(4)Delete your profile\n(5)Clear progres\n(6)Log out:" << endl;
+		cout << "(0)Check theory\n(1)Do tests\n(2)Check your score\n(3)Edit your profile\n(4)Delete your profile\n(5)Clear progress\n(6)Log out:" << endl;
 		if (cin.peek() == '\n') {
 			cin.ignore();
 		}
@@ -236,12 +236,12 @@ void ViewInteraction::getTypeOfTest(int& choice)
 	string strChoice;
 	do
 	{
-	cout<<"(0)Right triangle\n(1)Three sides\n(2)Two sides and an angle\n(3)The side and two angles\n(4)Control test\n(5)Leave tests:"<<endl;
+	cout<<"(0)Right triangle\n(1)Arbitrary triangle\n(2)Control test\n(3)Leave tests"<<endl;
 		if (cin.peek() == '\n') {
 			cin.ignore();
 		}
 		getline(cin, strChoice);
-	} while(!Validation::PickCheck(strChoice, 5));
+	} while(!Validation::PickCheck(strChoice, 4));
 	choice = stoi(strChoice);
 }
 
@@ -250,12 +250,26 @@ void ViewInteraction::getTypeOfTestRight(int& choice)
 	string strChoice;
 	do
 	{
-		cout << "(0)Hypothenuse adn Cathetus\n(1)Two cathetus\n(2)Cathetus and an angle\n(3)Cathetus and an opposite angle\n(4)Hypotenuse and an angle\n(5)Leave tests" << endl;
+		cout << "(0)Hypothenuse and Cathetus\n(1)Two cathetus\n(2)Cathetus and an angle\n(3)Cathetus and an opposite angle\n(4)Hypotenuse and an angle\n(5)Go back" << endl;
 		if (cin.peek() == '\n') {
 			cin.ignore();
 		}
 		getline(cin, strChoice);
 	} while (!Validation::PickCheck(strChoice, 6));
+	choice = stoi(strChoice);
+}
+
+void ViewInteraction::getTypeOfTestArbitrary(int& choice)
+{
+	string strChoice;
+	do
+	{
+		cout << "(0)Three sides\n(1)Two sides and an angle\n(2)One side and two angles\n(3)Go back" << endl;
+		if (cin.peek() == '\n') {
+			cin.ignore();
+		}
+		getline(cin, strChoice);
+	} while (!Validation::PickCheck(strChoice, 4));
 	choice = stoi(strChoice);
 }
 

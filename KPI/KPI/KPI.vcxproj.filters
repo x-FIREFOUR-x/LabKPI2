@@ -51,9 +51,6 @@
     <ClCompile Include="WorkWithTests.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="ExerciseArbitraryTriangle.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="ExerciseRightTriangle.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
@@ -61,6 +58,9 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="SolutionPrinterTriangle.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="ExerciseArbitraryTriangle.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
