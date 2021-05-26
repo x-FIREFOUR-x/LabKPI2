@@ -6,6 +6,7 @@
 #include "ViewMessages.h"
 #include "Validation.h"
 #include "SolutionPrinterTriangle.h"
+#include "SolutionPrinterRightTriangle.h"
 using namespace std;
 
 void WorkWithTests::rightTriangleFirst()
@@ -51,7 +52,7 @@ void WorkWithTests::rightTriangleFirst()
 		if (!isControlTest)
 		{
 			cout << "You are wrong!\n";
-			cout << "Angle A: " << results[0] << endl << "angle B: " << results[1] << endl << "cathet AC: " << results[2] << endl;
+			SolutionPrinterRightTriangle::printFirstSolution(results);
 			FileWriter::downScore(ID);
 		}
 	}
@@ -100,7 +101,7 @@ void WorkWithTests::rightTriangleSecond()
 		if (!isControlTest)
 		{
 			cout << "You are wrong!\n";
-			cout << "Angle A: " << results[1] << endl << "angle B: " << results[2] << endl << "hypothenuse AB: " << results[0] << endl;
+			SolutionPrinterRightTriangle::printSecondSolution(results);
 			FileWriter::downScore(ID);
 		}
 	}
@@ -148,7 +149,7 @@ void WorkWithTests::rightTriangleThird()
 		if (!isControlTest)
 		{
 			cout << "You are wrong!\n";
-			cout << "Angle C: " << results[2] << endl << "Cathet BC: " << results[1] << endl << "Hypothenuse AC: " << results[0] << endl;
+			SolutionPrinterRightTriangle::printThirdSolution(results);
 			FileWriter::downScore(ID);
 		}
 	}
@@ -196,7 +197,7 @@ void WorkWithTests::rightTriangleFourth()
 		if (!isControlTest)
 		{
 			cout << "You are wrong!\n";
-			cout << "Angle A: " << results[2] << endl << "Cathet BC: " << results[1] << endl << "Hypothenuse AC: " << results[0] << endl;
+			SolutionPrinterRightTriangle::printFourthSolution(results);
 			FileWriter::downScore(ID);
 		}
 	}
@@ -245,7 +246,7 @@ void WorkWithTests::rightTriangleFifth()
 		if (!isControlTest)
 		{
 			cout << "You are wrong!\n";
-			cout << "Cathet AC: " << results[0] << endl << "Cathet BC: " << results[1] << endl << "Angle B: " << results[2] << endl;
+			SolutionPrinterRightTriangle::printFifthSolution(results);
 			FileWriter::downScore(ID);
 		}
 	}
