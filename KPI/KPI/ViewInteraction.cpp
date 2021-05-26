@@ -236,7 +236,7 @@ void ViewInteraction::getTypeOfTest(int& choice)
 	string strChoice;
 	do
 	{
-		cout << "(0)Right triangle\n(1)Three sides\n(2)Two sides and an angle\n(3)The side and two angles\n(4)Leave tests" << endl;
+	cout<<"(0)Right triangle\n(1)Three sides\n(2)Two sides and an angle\n(3)The side and two angles\n(4)Control test\n(5)Leave tests:"<<endl;
 		if (cin.peek() == '\n') {
 			cin.ignore();
 		}
