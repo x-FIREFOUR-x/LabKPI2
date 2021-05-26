@@ -154,3 +154,34 @@ bool Validation::PickCheck(string& choice, int max)
 	cout << "You entered wrong value! Please try again:" << endl;
 	return correct;
 }
+
+bool Validation::CheckFloat(std::string& floatStr)
+{
+	while (floatStr.find(',') != string::npos)
+	{
+		floatStr[floatStr.find(',')] = '.';
+	}
+	bool correct = true;
+	int cntPoints = 0;
+	for (int i = 0; i < floatStr.length(); i++)
+	{
+		if ((floatStr[i] > 48 && floatStr[i] < 57) || floatStr[i] == '.')
+		{
+			if (floatStr[i] == '.')
+			{
+				cntPoints++;
+			}
+			if (cntPoints > 1)
+			{
+				cout << "You entered too many '.' symbols! Please try again:" << endl;
+				return false;
+			}
+		}
+		else
+		{
+			cout << "You entered wrong value! Please try again:" << endl;
+			return false;
+		}
+	}
+	return true;
+}

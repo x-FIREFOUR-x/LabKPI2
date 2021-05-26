@@ -128,16 +128,20 @@ void ViewInteraction::showTheory()
 	//cout << "���������" << endl;
 	vector<string> str;
 	str = Theory::getInfo(0);
-	string strchoose;
-	int choose;
 	for (int i = 0; i < str.size(); i++)
 	{
 		cout << str[i];
 	}
 	cout << endl;
+	string strchoose;
+	int choose;
 	do
 	{
 		cout << "Choose a section(or press 0 to leave): ";
+		if (cin.peek() == '\n') {
+			cin.ignore();
+		}
+		getline(cin, strchoose);
 	} while (!Validation::PickCheck(strchoose, 12));
 	choose = stoi(strchoose);
 	if (choose != 0)
@@ -159,6 +163,10 @@ void ViewInteraction::showTheory()
 			if (choose < 11)
 				cout << "(1)Next page\n";
 			cout << "(2)Close\n";
+			if (cin.peek() == '\n') {
+				cin.ignore();
+			}
+			getline(cin, strOperation);
 		} while (!Validation::PickCheck(strOperation, 3));
 		operation = stoi(strOperation);
 		if ((operation == 0) && (choose > 1))
@@ -200,6 +208,10 @@ void ViewInteraction::showTheory(int n)
 		if (n < 11)
 			cout << "(1)Next page\n";
 		cout << "(2)Close\n";
+		if (cin.peek() == '\n') {
+			cin.ignore();
+		}
+		getline(cin, strOperation);
 	} while (!Validation::PickCheck(strOperation, 3));
 	operation = stoi(strOperation);
 	SetConsoleOutputCP(866);
@@ -224,7 +236,11 @@ void ViewInteraction::getTypeOfTest(int& choice)
 	string strChoice;
 	do
 	{
-		cout << "(0)Right triangle\n(1)Three sides\n(2)Two sides and an angle\n(3)The side and two angles\n(4)Leave tests:" << endl;
+		cout << "(0)Right triangle\n(1)Three sides\n(2)Two sides and an angle\n(3)The side and two angles\n(4)Leave tests" << endl;
+		if (cin.peek() == '\n') {
+			cin.ignore();
+		}
+		getline(cin, strChoice);
 	} while(!Validation::PickCheck(strChoice, 5));
 	choice = stoi(strChoice);
 }
@@ -235,6 +251,10 @@ void ViewInteraction::getTypeOfTestRight(int& choice)
 	do
 	{
 		cout << "(0)First\n(1)Second\n(2)Third\n(3)Fourth\n(4)Fifth\n(5)Leave tests" << endl;
+		if (cin.peek() == '\n') {
+			cin.ignore();
+		}
+		getline(cin, strChoice);
 	} while (!Validation::PickCheck(strChoice, 6));
 	choice = stoi(strChoice);
 }

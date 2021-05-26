@@ -11,5 +11,6 @@ public:
 	static bool DataEmptyCheck(std::string data, std::string str);
 	static bool IDCheck(int ID);
 	static bool PickCheck(std::string& choice, int max);
+	static bool CheckFloat(std::string& floatStr);
 };
 
