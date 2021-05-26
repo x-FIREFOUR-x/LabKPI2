@@ -1,6 +1,7 @@
 #include "FileReader.h"
 #include "ViewMessages.h"
 #include "Profile.h"
+#include <iostream>
 using namespace std;
 
 Profile FileReader::readProfile(int ID)
@@ -114,9 +115,21 @@ bool FileReader::readCheckLogin(string login)
 	inFile.close();
 	return correct;
 }
-int FileReader::readScore(int ID ) {
+int* FileReader::readScore(int ID ) 
+{
 	int currentScore;
 	ifstream inFile("Database/Profiles/Scores/" + std::to_string(ID) + ".txt");
-	inFile >> currentScore;
-	return currentScore;
+	
+	
+	int* scores = new int[8];
+	string score;
+	getline(inFile, score);
+	cout << score << endl;
+	for (int i = 0; i < 8; i++)
+	{
+		scores[i] = stoi(score.substr(i*2,1));
+		//cout << stoi(score.substr(i * 2, 1)) << endl;
+	}
+
+	return scores;
 }

@@ -42,7 +42,9 @@ void FileWriter::writeProfileData(Profile profileData)
 {
 	ofstream outProfile("Database/Profiles/" + std::to_string(profileData.getID()) + ".txt");
 	ofstream outProfile2("Database/Profiles/Scores/" + std::to_string(profileData.getID()) + ".txt");
-	outProfile2 << 0;
+
+	outProfile2 << "0 0 0 0 0 0 0 0";
+	
 	outProfile << profileData.getName() << " " << profileData.getEmail()<< "\n";
 	outProfile.close();
 	outProfile2.close();
@@ -77,7 +79,29 @@ void FileWriter::downScore(int ID)
 	outFile << currentScore;
 	outFile.close();
 }
+void FileWriter::setSolved(int ID, int number_kind_test)
+{
+	string currentScore;
+	ifstream inFile("Database/Profiles/Scores/" + std::to_string(ID) + ".txt");
+	getline(inFile, currentScore);
+	inFile.close();
+	int* scores = new int[8];
 
+	for (int i = 0; i < 8; i++)
+	{
+		scores[i] = stoi(currentScore.substr(i * 2, 1));
+	}
+
+	scores[number_kind_test] = 1;
+
+	ofstream outFile("Database/Profiles/Scores/" + std::to_string(ID) + ".txt", ios::trunc);
+	for (int i = 0; i < 7; i++)
+	{
+		outFile << scores[i] << " ";
+	}
+	outFile << scores[7];
+	outFile.close();
+}
 
 void FileWriter::clearFileData(string path)
 {

@@ -15,5 +15,6 @@ public:
 	static void editFileEmail(std::string oldPath, std::string newPath, std::string newEmail);
 	static void upScore(int ID);
 	static void downScore(int ID);
+	static void setSolved(int ID, int number_kind_test);
 };
 

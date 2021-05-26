@@ -20,5 +20,5 @@ protected:
 	std::string email;
 	std::string password;
 	std::string login;
-	int score;
+	int* solved ;
 };

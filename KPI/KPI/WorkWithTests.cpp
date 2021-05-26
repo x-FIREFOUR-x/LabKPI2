@@ -23,13 +23,14 @@ void WorkWithTests::rightTriangleFirst()
 	if((static_cast<int>(angleA*10)==static_cast<int>(results[0]*10))&&(static_cast<int>(angleB*10)==static_cast<int>(results[1]*10))&&(static_cast<int>(cathet*10)==static_cast<int>(results[2]*10)))
 	{
 		cout<<"Your answers are correct!\n";
-		FileWriter::upScore(ID);
+		//FileWriter::upScore(ID);   
+		FileWriter::setSolved(ID, 0);
 	}
 	else
 	{
 		cout<<"You are wrong!\n";
 		cout << "Angle A: " << results[0] << endl << "angle B: " << results[1] << endl << "cathet AC: " << results[2] << endl;
-		FileWriter::downScore(ID);
+		//FileWriter::downScore(ID);
 	}
 }
 
@@ -48,13 +49,14 @@ void WorkWithTests::rightTriangleSecond()
 	if ((static_cast<int>(angleA * 10) == static_cast<int>(results[1] * 10)) && (static_cast<int>(angleB * 10) == static_cast<int>(results[2] * 10)) && (static_cast<int>(hypothenuseAB * 10) == static_cast<int>(results[0] * 10)))
 	{
 		cout << "Your answers are correct!\n";
-		FileWriter::upScore(ID);
+		//FileWriter::upScore(ID);
+		FileWriter::setSolved(ID, 1);
 	}
 	else
 	{
 		cout << "You are wrong!\n";
 		cout << "Angle A: " << results[1] << endl << "angle B: " << results[2] << endl << "hypothenuse AB: " << results[0] << endl;
-		FileWriter::downScore(ID);
+		//FileWriter::downScore(ID);
 	}
 }
 void WorkWithTests::rightTriangleThird()
@@ -72,13 +74,14 @@ void WorkWithTests::rightTriangleThird()
 	if ((static_cast<int>(cathetBC * 10) == static_cast<int>(results[1] * 10)) && (static_cast<int>(angleC * 10) == static_cast<int>(results[2] * 10)) && (static_cast<int>(hypothenuseAC * 10) == static_cast<int>(results[0] * 10)))
 	{
 		cout << "Your answers are correct!\n";
-		FileWriter::upScore(ID);
+		//FileWriter::upScore(ID);
+		FileWriter::setSolved(ID, 2);
 	}
 	else
 	{
 		cout << "You are wrong!\n";
 		cout << "Angle C: " << results[2] << endl << "Cathet BC: " << results[1] << endl << "Hypothenuse AC: " << results[0] << endl;
-		FileWriter::downScore(ID);
+		//FileWriter::downScore(ID);
 	}
 }
 void WorkWithTests::rightTriangleFourth()
@@ -96,13 +99,14 @@ void WorkWithTests::rightTriangleFourth()
 	if ((static_cast<int>(angleA * 10) == static_cast<int>(results[1] * 10)) && (static_cast<int>(cathetBC * 10) == static_cast<int>(results[2] * 10)) && (static_cast<int>(hypothenuseAC * 10) == static_cast<int>(results[0] * 10)))
 	{
 		cout << "Your answers are correct!\n";
-		FileWriter::upScore(ID);
+		FileWriter::setSolved(ID, 3);
+		//FileWriter::upScore(ID);
 	}
 	else
 	{
 		cout << "You are wrong!\n";
 		cout << "Angle A: " << results[2] << endl << "Cathet BC: " << results[1] << endl << "Hypothenuse AC: " << results[0] << endl;
-		FileWriter::downScore(ID);
+		//FileWriter::downScore(ID);
 	}
 }
 void WorkWithTests::rightTriangleFifth()
@@ -120,13 +124,14 @@ void WorkWithTests::rightTriangleFifth()
 	if ((static_cast<int>(cathetBC * 10) == static_cast<int>(results[1] * 10)) && (static_cast<int>(angleB * 10) == static_cast<int>(results[2] * 10)) && (static_cast<int>(cathetAC * 10) == static_cast<int>(results[0] * 10)))
 	{
 		cout << "Your answers are correct!\n";
-		FileWriter::upScore(ID);
+		FileWriter::setSolved(ID, 4);
+		//FileWriter::upScore(ID);
 	}
 	else
 	{
 		cout << "You are wrong!\n";
 		cout << "Cathet AC: " << results[0] << endl << "Cathet BC: " << results[1] << endl << "Angle B: " << results[2] << endl;
-		FileWriter::downScore(ID);
+		//FileWriter::downScore(ID);
 	}
 }
 
@@ -145,13 +150,14 @@ void WorkWithTests::arbitraryTriangleFirst()
 	if ((static_cast<int>(angleB * 10) == static_cast<int>(results[0] * 10)) && (static_cast<int>(angleC * 10) == static_cast<int>(results[1] * 10)) && (static_cast<int>(angleA * 10) == static_cast<int>(results[2] * 10)))
 	{
 		cout << "Your answers are correct!\n";
-		FileWriter::upScore(ID);
+		FileWriter::setSolved(ID, 5);
+		//FileWriter::upScore(ID);
 	}
 	else
 	{
 		cout << "You are wrong!\n";
 		cout << "Angle B: " << results[0] << endl << "Angle C: " << results[1] << endl << "Angle A: " << results[2] << endl;
-		FileWriter::downScore(ID);
+		//FileWriter::downScore(ID);
 	}
 }
 void WorkWithTests::arbitraryTriangleSecond()
@@ -169,13 +175,14 @@ void WorkWithTests::arbitraryTriangleSecond()
 	if ((static_cast<int>(cathetAC * 10) == static_cast<int>(results[0] * 10)) && (static_cast<int>(angleC * 10) == static_cast<int>(results[1] * 10)) && (static_cast<int>(angleA * 10) == static_cast<int>(results[2] * 10)))
 	{
 		cout << "Your answers are correct!\n";
-		FileWriter::upScore(ID);
+		//FileWriter::upScore(ID);
+		FileWriter::setSolved(ID, 6);
 	}
 	else
 	{
 		cout << "You are wrong!\n";
 		cout << "Cathet AC: " << results[0] << endl << "Angle C: " << results[1] << endl << "Angle A: " << results[2] << endl;
-		FileWriter::downScore(ID);
+		//FileWriter::downScore(ID);
 	}
 }
 void WorkWithTests::arbitraryTriangleThird()
@@ -193,12 +200,13 @@ void WorkWithTests::arbitraryTriangleThird()
 	if ((static_cast<int>(angleC * 10) == static_cast<int>(results[0] * 10)) && (static_cast<int>(cathetAC * 10) == static_cast<int>(results[1] * 10)) && (static_cast<int>(cathetBC * 10) == static_cast<int>(results[2] * 10)))
 	{
 		cout << "Your answers are correct!\n";
-		FileWriter::upScore(ID);
+		FileWriter::setSolved(ID, 7);
+		//FileWriter::upScore(ID);
 	}
 	else
 	{
 		cout << "You are wrong!\n";
 		cout << "Angle C: " << results[0] << endl << "Cathet AC: " << results[1] << endl << "Cathet BC: " << results[2] << endl;
-		FileWriter::downScore(ID);
+		//FileWriter::downScore(ID);
 	}
 }

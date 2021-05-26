@@ -60,7 +60,18 @@ void ViewMessages::ConditionOut(std::string condition)
 	SetConsoleOutputCP(866);
 }
 
-void ViewMessages::ScoreOut(int score)
+void ViewMessages::ScoreOut(int* score)
 {
-	cout << "Your current score is: " << score << endl;
+	int sum_right = 0;
+	for (int i = 0; i < 5; i++)
+	{
+		sum_right += score[i];
+	}
+	
+	cout << "Your passed tests is: " <<  endl;
+	cout << "Right triangle " << sum_right << "/" << "5" << endl;
+	cout << "Three sides " << (int)score[5] << "/" << "1" << endl;
+	cout << "Two sides and an angle " << (int)score[6] << "/" << "1" << endl;
+	cout << "The side and two angles " << (int)score[7] << "/" << "1" << endl;
+
 }

@@ -107,7 +107,7 @@ void SiteInterface::showMenu()
 				}
 				else if (action == 2)
 				{
-					int currentScore = FileReader::readScore(ID);
+					int* currentScore = FileReader::readScore(ID);
 					ViewMessages::ScoreOut(currentScore);
 				}
 				else if (action == 3)

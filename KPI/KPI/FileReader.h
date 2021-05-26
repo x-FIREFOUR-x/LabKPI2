@@ -11,6 +11,6 @@ public:
 	static void readLoginAndPassword(int ID, std::string& login, std::string& password);
 	static bool readCheckID(int ID);
 	static bool readCheckLogin(std::string login);
-	static int readScore(int ID);
+	static int* readScore(int ID);
 };
 
