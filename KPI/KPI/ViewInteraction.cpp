@@ -149,15 +149,15 @@ void ViewInteraction::showTheory()
 		str.clear();
 		clearScreen();
 		str = Theory::getInfo(choose);
-		for (int i = 0; i < str.size(); i++)
-		{
-			cout << str[i];
-		}
-		cout << endl;
 		int operation;
 		string strOperation;
 		do
 		{
+			for (int i = 0; i < str.size(); i++)
+			{
+				cout << str[i];
+			}
+			cout << endl;
 			if (choose > 1)
 				cout << "(0)Previous page\n";
 			if (choose < 11)
@@ -194,15 +194,15 @@ void ViewInteraction::showTheory(int n)
 	SetConsoleOutputCP(1251);
 	vector<string> str;
 	str = Theory::getInfo(n);
-	for (int i = 0; i < str.size(); i++)
-	{
-		cout << str[i];
-	}
-	cout << endl;
 	int operation;
 	string strOperation;
 	do
 	{
+		for (int i = 0; i < str.size(); i++)
+		{
+			cout << str[i];
+		}
+		cout << endl;
 		if (n > 1)
 			cout << "(0)Previous page\n";
 		if (n < 11)
