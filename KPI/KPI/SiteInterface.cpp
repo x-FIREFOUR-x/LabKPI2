@@ -66,8 +66,9 @@ void SiteInterface::showMenu()
 				else if (action == 1)
 				{
 					int testChoice;
+					bool control = false;
 					ViewInteraction::getTypeOfTest(testChoice);
-					WorkWithTests tests(current.getID());
+					WorkWithTests tests(current.getID(), control);
 					if (testChoice == 0)
 					{
 						int testRightChoice = 0;
@@ -102,6 +103,11 @@ void SiteInterface::showMenu()
 					else if (testChoice == 3)
 					{
 						tests.arbitraryTriangleThird();
+					}
+					else if (testChoice == 4)
+					{
+						tests.setIsControlTest(true);
+						tests.controlTest();
 					}
 
 				}
