@@ -5,7 +5,7 @@
 #include <iostream>
 #include "ViewMessages.h"
 #include "Validation.h"
-
+#include "SolutionPrinterTriangle.h"
 using namespace std;
 
 void WorkWithTests::rightTriangleFirst()
@@ -294,7 +294,7 @@ void WorkWithTests::arbitraryTriangleFirst()
 		if (!isControlTest)
 		{
 			cout << "You are wrong!\n";
-			cout << "Angle B: " << results[0] << endl << "Angle C: " << results[1] << endl << "Angle A: " << results[2] << endl;
+			SolutionPrinterTriangle::printFirstSolution(results);
 			FileWriter::downScore(ID);
 		}
 	}
@@ -342,7 +342,7 @@ void WorkWithTests::arbitraryTriangleSecond()
 		if (!isControlTest)
 		{
 			cout << "You are wrong!\n";
-			cout << "Cathet AC: " << results[0] << endl << "Angle C: " << results[1] << endl << "Angle A: " << results[2] << endl;
+			SolutionPrinterTriangle::printSecondSolution(results);
 			FileWriter::downScore(ID);
 		}
 	}
@@ -393,7 +393,7 @@ void WorkWithTests::arbitraryTriangleThird()
 		if (!isControlTest)
 		{
 			cout << "You are wrong!\n";
-			cout << "Angle C: " << results[0] << endl << "Cathet AC: " << results[1] << endl << "Cathet BC: " << results[2] << endl;
+			SolutionPrinterTriangle::printThirdSolution(results);
 			FileWriter::downScore(ID);
 		}
 	}

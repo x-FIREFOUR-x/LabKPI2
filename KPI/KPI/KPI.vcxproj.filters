@@ -60,6 +60,9 @@
     <ClCompile Include="SolutionPrinterRightTriangle.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="SolutionPrinterTriangle.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SiteInterface.h">
@@ -102,6 +105,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="SolutionPrinterRightTriangle.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="SolutionPrinterTriangle.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
