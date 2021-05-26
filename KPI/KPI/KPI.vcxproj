@@ -150,6 +150,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Profile.cpp" />
     <ClCompile Include="SiteInterface.cpp" />
+    <ClCompile Include="SolutionPrinterRightTriangle.cpp" />
     <ClCompile Include="Theory.cpp" />
     <ClCompile Include="Validation.cpp" />
     <ClCompile Include="ViewInteraction.cpp" />
@@ -165,6 +166,7 @@
     <ClInclude Include="FileWriter.h" />
     <ClInclude Include="Profile.h" />
     <ClInclude Include="SiteInterface.h" />
+    <ClInclude Include="SolutionPrinterRightTriangle.h" />
     <ClInclude Include="Theory.h" />
     <ClInclude Include="Validation.h" />
     <ClInclude Include="ViewInteraction.h" />
