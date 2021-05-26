@@ -53,9 +53,10 @@ void WorkWithTests::rightTriangleFirst()
 	{
 		if (!isControlTest)
 		{
-			ViewInteraction::clearScreen();
 			cout << "You are wrong!\n";
 			SolutionPrinterRightTriangle::printFirstSolution(results);
+			ViewInteraction::Pause();
+			ViewInteraction::clearScreen();
 		}
 	}
 }
@@ -103,9 +104,10 @@ void WorkWithTests::rightTriangleSecond()
 	{
 		if (!isControlTest)
 		{
-			ViewInteraction::clearScreen();
 			cout << "You are wrong!\n";
 			SolutionPrinterRightTriangle::printSecondSolution(results);
+			ViewInteraction::Pause();
+			ViewInteraction::clearScreen();
 		}
 	}
 }
@@ -152,9 +154,10 @@ void WorkWithTests::rightTriangleThird()
 	{
 		if (!isControlTest)
 		{
-			ViewInteraction::clearScreen();
 			cout << "You are wrong!\n";
 			SolutionPrinterRightTriangle::printThirdSolution(results);
+			ViewInteraction::Pause();
+			ViewInteraction::clearScreen();
 		}
 	}
 }
@@ -201,9 +204,10 @@ void WorkWithTests::rightTriangleFourth()
 	{
 		if (!isControlTest)
 		{
-			ViewInteraction::clearScreen();
 			cout << "You are wrong!\n";
 			SolutionPrinterRightTriangle::printFourthSolution(results);
+			ViewInteraction::Pause();
+			ViewInteraction::clearScreen();
 		}
 	}
 }
@@ -251,9 +255,10 @@ void WorkWithTests::rightTriangleFifth()
 	{
 		if (!isControlTest)
 		{
-			ViewInteraction::clearScreen();
 			cout << "You are wrong!\n";
 			SolutionPrinterRightTriangle::printFifthSolution(results);
+			ViewInteraction::Pause();
+			ViewInteraction::clearScreen();
 		}
 	}
 }
@@ -301,9 +306,10 @@ void WorkWithTests::arbitraryTriangleFirst()
 	{
 		if (!isControlTest)
 		{
-			ViewInteraction::clearScreen();
 			cout << "You are wrong!\n";
 			SolutionPrinterTriangle::printFirstSolution(results);
+			ViewInteraction::Pause();
+			ViewInteraction::clearScreen();
 		}
 	}
 }
@@ -350,9 +356,10 @@ void WorkWithTests::arbitraryTriangleSecond()
 	{
 		if (!isControlTest)
 		{
-			ViewInteraction::clearScreen();
 			cout << "You are wrong!\n";
 			SolutionPrinterTriangle::printSecondSolution(results);
+			ViewInteraction::Pause();
+			ViewInteraction::clearScreen();
 		}
 	}
 }
@@ -402,9 +409,10 @@ void WorkWithTests::arbitraryTriangleThird()
 	{
 		if (!isControlTest)
 		{
-			ViewInteraction::clearScreen();
 			cout << "You are wrong!\n";
 			SolutionPrinterTriangle::printThirdSolution(results);
+			ViewInteraction::Pause();
+			ViewInteraction::clearScreen();
 		}
 	}
 }
@@ -439,5 +447,5 @@ void WorkWithTests::controlTest()
 	}
 	ViewInteraction::clearScreen();
 	cout << "You have answered: " << count << "/8" << endl << endl;
-	system("pause");
+	ViewInteraction::Pause();
 }

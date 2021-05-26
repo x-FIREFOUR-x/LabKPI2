@@ -85,7 +85,8 @@ void ViewMessages::ScoreOut(int* score)
 	cout << "Three sides " << (int)score[5] << "/" << "1" << endl;
 	cout << "Two sides and an angle " << (int)score[6] << "/" << "1" << endl;
 	cout << "The side and two angles " << (int)score[7] << "/" << "1" << endl;
-
+	ViewInteraction::Pause();
+	ViewInteraction::clearScreen();
 }
 
 void ViewMessages::clearProgresSuccesfull()

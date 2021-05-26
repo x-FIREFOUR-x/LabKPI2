@@ -125,7 +125,6 @@ void ViewInteraction::showTheory()
 	clearScreen();
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	//cout << "���������" << endl;
 	vector<string> str;
 	str = Theory::getInfo(0);
 	string strchoose;
@@ -260,3 +259,9 @@ void ViewInteraction::getTypeOfTestRight(int& choice)
 	choice = stoi(strChoice);
 }
 
+void ViewInteraction::Pause()
+{
+	string anykey;
+	cout << "Press any key to continue..." << endl;
+	cin >> anykey;
+}

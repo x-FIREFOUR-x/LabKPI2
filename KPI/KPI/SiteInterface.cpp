@@ -72,8 +72,10 @@ void SiteInterface::showMenu()
 					if (testChoice == 0)
 					{
 						int testRightChoice = 0;
+						ViewInteraction::clearScreen();
 						do{
 							ViewInteraction::getTypeOfTestRight(testRightChoice);
+							ViewInteraction::clearScreen();
 							if (testRightChoice == 0) {
 								tests.rightTriangleFirst();
 							}
