@@ -3,9 +3,12 @@
 class WorkWithTests
 {
 	int ID;
+	bool isControlTest;
+	int count;
 public:
-	WorkWithTests(int ID) {
+	WorkWithTests(int ID, bool control) {
 		this->ID = ID;
+		isControlTest = control;
 	}
 	void rightTriangleFirst();
 	void rightTriangleSecond();
@@ -15,5 +18,6 @@ public:
 	void arbitraryTriangleFirst();
 	void arbitraryTriangleSecond();
 	void arbitraryTriangleThird();
+	void controlTest();
+	void setIsControlTest(bool control) { isControlTest = control; }
 };
-
