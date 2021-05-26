@@ -4,15 +4,15 @@
 
 class ExerciseRightTriangle
 {
-	std::vector<float> results;
+	std::vector<std::pair<std::string, float>> results;
 	std::string condition;
 public:
 	std::string getCondition();
-	std::vector<float> first();
-	std::vector<float> second();
-	std::vector<float> third();
-	std::vector<float> fourth();
-	std::vector<float> fifth();
+	std::vector<std::pair<std::string, float>> first();
+	std::vector<std::pair<std::string, float>> second();
+	std::vector<std::pair<std::string, float>> third();
+	std::vector<std::pair<std::string, float>> fourth();
+	std::vector<std::pair<std::string, float>> fifth();
 };
 
 

@@ -11,7 +11,7 @@ using namespace std;
 void WorkWithTests::rightTriangleFirst()
 {
 	ExerciseRightTriangle task;
-	vector <float> results = task.first();
+	vector <pair<string, float>> results = task.first();
 	ViewMessages::ConditionOut(task.getCondition());
 	cout<<"Enter angle A:\n";
 	float angleA, angleB, cathet;
