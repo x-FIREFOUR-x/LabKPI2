@@ -58,7 +58,7 @@ std::vector<float> ExerciseArbitraryTriangle::third()
 	do
 	{
 		A = rand() % 130 + 20; 
-	} while (A + B < 175);
+	} while (A + B > 175);
 	condition="������� �������� ��������� ABC. ������ ������ ������� �� ��� ���������� �� �������� = " + to_string(AB) + "��, ����� � = " + to_string(B) + " �� ����� A = " + to_string(A) + '.';
 	float C=180 - B - A;
 	results.push_back(C);

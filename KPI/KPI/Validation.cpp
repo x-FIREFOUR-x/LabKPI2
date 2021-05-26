@@ -131,8 +131,9 @@ bool Validation::PickCheck(string& choice, int max)
 	bool correct = true;
 	if (choice.size() > 1)
 	{
-		for (int k = 0; k < choice.length() - 1; k++) {
-			if (choice[k] != '0')correct = false;
+		if (choice.size() > 2 || choice[0] == '0')
+		{
+			correct = false;
 		}
 	}
 	if (choice[choice.length() - 1] < 48 || choice[choice.length() - 1] > 57)
@@ -161,11 +162,10 @@ bool Validation::CheckFloat(std::string& floatStr)
 	{
 		floatStr[floatStr.find(',')] = '.';
 	}
-	bool correct = true;
 	int cntPoints = 0;
 	for (int i = 0; i < floatStr.length(); i++)
 	{
-		if ((floatStr[i] > 48 && floatStr[i] < 57) || floatStr[i] == '.')
+		if ((floatStr[i] >= 48 && floatStr[i] <= 57) || floatStr[i] == '.')
 		{
 			if (floatStr[i] == '.')
 			{

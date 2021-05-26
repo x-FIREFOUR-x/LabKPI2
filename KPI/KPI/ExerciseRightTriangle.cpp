@@ -42,7 +42,7 @@ vector<float> ExerciseRightTriangle::second()
 
 vector<float> ExerciseRightTriangle::third()
 {
-    int AB = rand() % 30; //cathetus
+    int AB = rand() % 30 + 5; //cathetus
     int A = rand() % 70 + 10; //adjacent acute angle А
     float angleInRadians = (static_cast<float>(A)) * M_PI / 180;
 	condition="Заданий прямокутний трикутник ABC. Знайти невідомі сторони й гострі кути трикутника за катетом AB = " + to_string(AB) + "см і гострим кутом А = " + to_string(A) + '.';
@@ -57,7 +57,7 @@ vector<float> ExerciseRightTriangle::third()
 
 vector<float> ExerciseRightTriangle::fourth()
 {
-    int AB = rand() % 30; //cathetus АВ
+    int AB = rand() % 30 + 5; //cathetus АВ
     int C = rand() % 70 + 10; //opposite acute angle C
     float angleInRadians = (static_cast<float>(C)) * M_PI / 180;
 	condition="Знайти невідомі сторони й гострі кути прямокутного трикутника за катетом AB=" + to_string(AB) + " і гострим кутом С=" + to_string(C) + '.';

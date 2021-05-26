@@ -42,7 +42,7 @@ void WorkWithTests::rightTriangleFirst()
 		if (!isControlTest)
 		{
 			cout << "Your answers are correct!\n";
-			FileWriter::upScore(ID);
+		FileWriter::setSolved(ID, 0);
 		}
 		else
 			count++;
@@ -53,7 +53,6 @@ void WorkWithTests::rightTriangleFirst()
 		{
 			cout << "You are wrong!\n";
 			SolutionPrinterRightTriangle::printFirstSolution(results);
-			FileWriter::downScore(ID);
 		}
 	}
 }
@@ -91,7 +90,7 @@ void WorkWithTests::rightTriangleSecond()
 		if (!isControlTest)
 		{
 			cout << "Your answers are correct!\n";
-			FileWriter::upScore(ID);
+		FileWriter::setSolved(ID, 1);
 		}
 		else
 			count++;
@@ -102,7 +101,6 @@ void WorkWithTests::rightTriangleSecond()
 		{
 			cout << "You are wrong!\n";
 			SolutionPrinterRightTriangle::printSecondSolution(results);
-			FileWriter::downScore(ID);
 		}
 	}
 }
@@ -139,7 +137,7 @@ void WorkWithTests::rightTriangleThird()
 		if (!isControlTest)
 		{
 			cout << "Your answers are correct!\n";
-			FileWriter::upScore(ID);
+		FileWriter::setSolved(ID, 2);
 		}
 		else
 			count++;
@@ -150,7 +148,6 @@ void WorkWithTests::rightTriangleThird()
 		{
 			cout << "You are wrong!\n";
 			SolutionPrinterRightTriangle::printThirdSolution(results);
-			FileWriter::downScore(ID);
 		}
 	}
 }
@@ -187,7 +184,7 @@ void WorkWithTests::rightTriangleFourth()
 		if (!isControlTest)
 		{
 			cout << "Your answers are correct!\n";
-			FileWriter::upScore(ID);
+		FileWriter::setSolved(ID, 3);
 		}
 		else
 			count++;
@@ -198,7 +195,6 @@ void WorkWithTests::rightTriangleFourth()
 		{
 			cout << "You are wrong!\n";
 			SolutionPrinterRightTriangle::printFourthSolution(results);
-			FileWriter::downScore(ID);
 		}
 	}
 }
@@ -236,7 +232,7 @@ void WorkWithTests::rightTriangleFifth()
 		if (!isControlTest)
 		{
 			cout << "Your answers are correct!\n";
-			FileWriter::upScore(ID);
+		FileWriter::setSolved(ID, 4);
 		}
 		else
 			count++;
@@ -247,7 +243,6 @@ void WorkWithTests::rightTriangleFifth()
 		{
 			cout << "You are wrong!\n";
 			SolutionPrinterRightTriangle::printFifthSolution(results);
-			FileWriter::downScore(ID);
 		}
 	}
 }
@@ -285,7 +280,7 @@ void WorkWithTests::arbitraryTriangleFirst()
 		if (!isControlTest)
 		{
 			cout << "Your answers are correct!\n";
-			FileWriter::upScore(ID);
+		FileWriter::setSolved(ID, 5);
 		}
 		else
 			count++;
@@ -296,7 +291,6 @@ void WorkWithTests::arbitraryTriangleFirst()
 		{
 			cout << "You are wrong!\n";
 			SolutionPrinterTriangle::printFirstSolution(results);
-			FileWriter::downScore(ID);
 		}
 	}
 }
@@ -333,7 +327,7 @@ void WorkWithTests::arbitraryTriangleSecond()
 		if (!isControlTest)
 		{
 			cout << "Your answers are correct!\n";
-			FileWriter::upScore(ID);
+		FileWriter::setSolved(ID, 6);
 		}
 		else
 			count++;
@@ -344,7 +338,6 @@ void WorkWithTests::arbitraryTriangleSecond()
 		{
 			cout << "You are wrong!\n";
 			SolutionPrinterTriangle::printSecondSolution(results);
-			FileWriter::downScore(ID);
 		}
 	}
 }
@@ -384,7 +377,7 @@ void WorkWithTests::arbitraryTriangleThird()
 		if (!isControlTest)
 		{
 			cout << "Your answers are correct!\n";
-			FileWriter::upScore(ID);
+		FileWriter::setSolved(ID, 7);
 		}
 		else
 			count++;
@@ -395,7 +388,6 @@ void WorkWithTests::arbitraryTriangleThird()
 		{
 			cout << "You are wrong!\n";
 			SolutionPrinterTriangle::printThirdSolution(results);
-			FileWriter::downScore(ID);
 		}
 	}
 }
@@ -428,6 +420,6 @@ void WorkWithTests::controlTest()
 		cout << endl;
 		test.erase(test.begin() + k);
 	}
-	cout << "You have answered: " << count << "/20" << endl << endl;
+	cout << "You have answered: " << count << "/8" << endl << endl;
 	system("pause");
 }
